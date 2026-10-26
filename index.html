@@ -1,1130 +1,1838 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Chemistry Zone - Premier Learning Hub</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RAMMS GROUPS | Realtime Applications, Marketing & Media Solutions</title>
   
-  <!-- Google Fonts: SF Pro lookalike (Inter) & FontAwesome for iOS-like icons -->
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://i.ibb.co/8nxXgV3r/file-00000000eaf88208b71aadae7827aebd.png">
+  <link rel="shortcut icon" href="https://i.ibb.co/8nxXgV3r/file-00000000eaf88208b71aadae7827aebd.png">
+  <link rel="apple-touch-icon" href="https://i.ibb.co/8nxXgV3r/file-00000000eaf88208b71aadae7827aebd.png">
+
+  <!-- Core Meta Tags -->
+  <meta name="description" content="RAMMS GROUPS is a Government MSME registered digital education provider and IT agency offering verified freelancing courses, website engineering, School ERP systems, and zero-fee affiliate opportunities.">
+  <meta name="keywords" content="RAMMS GROUPS, Web Engineering, Freelancing Courses, School Management ERP, Digital Services, MSME Registered Enterprise">
+  <meta name="robots" content="index, follow">
+
+  <!-- Fonts & Icons -->
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-
+ <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+    
   <style>
-    /* =========================================================
-       CSS VARIABLES & iOS LIQUID GLASSMORPHIC THEME
-       ========================================================= */
-    :root {
-      --bg-dark: #070913;
-      --glass-bg: rgba(255, 255, 255, 0.07);
-      --glass-border: rgba(255, 255, 255, 0.18);
-      --glass-glow: rgba(0, 225, 255, 0.15);
-      --glass-blur: 24px;
-      --text-primary: #ffffff;
-      --text-secondary: rgba(255, 255, 255, 0.7);
-      --accent-cyan: #00f2fe;
-      --accent-purple: #9b51e0;
-      --accent-pink: #ff2a85;
-      --accent-green: #25d366;
-      --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    * { font-family: 'Plus Jakarta Sans', sans-serif; }
+    .heading-font { font-family: 'Space Grotesk', sans-serif; }
+    .mono-font { font-family: 'JetBrains Mono', monospace; }
+
+    #netlify-drawer, div[id*="netlify"], iframe[id*="netlify"], div[class*="netlify-drawer"], .netlify-badge, [data-netlify-deploy-id] {
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-      scroll-behavior: smooth;
-    }
-
+    /* Enterprise White Canvas */
     body {
-      background-color: var(--bg-dark);
-      color: var(--text-primary);
-      overflow-x: hidden;
-      min-height: 100vh;
-      position: relative;
+      background-color: #F8FAFC !important;
+      color: #0F172A !important;
     }
 
-    /* =========================================================
-       DYNAMIC LIQUID BACKGROUND (iOS Animated Orbs)
-       ========================================================= */
-    .liquid-bg {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: -1;
+    /* Ultra-Premium White Frosted Glass Cards */
+    .titanium-card {
+      background: rgba(255, 255, 255, 0.85) !important;
+      backdrop-filter: blur(16px) saturate(180%) !important;
+      -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
+      border: 1px solid rgba(226, 232, 240, 0.9) !important;
+      box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.06), 0 4px 10px -2px rgba(15, 23, 42, 0.03) !important;
+      color: #0F172A !important;
+      transition: all 0.3s ease !important;
+    }
+    .titanium-card:hover {
+      background: rgba(255, 255, 255, 0.95) !important;
+      border-color: rgba(245, 158, 11, 0.4) !important;
+      box-shadow: 0 20px 35px -8px rgba(15, 23, 42, 0.1) !important;
+      transform: translateY(-3px) !important;
+    }
+
+    /* Institutional White Navbar */
+    .titanium-nav {
+      background: rgba(255, 255, 255, 0.92) !important;
+      backdrop-filter: blur(20px) !important;
+      -webkit-backdrop-filter: blur(20px) !important;
+      border-bottom: 1px solid #E2E8F0 !important;
+      box-shadow: 0 2px 15px rgba(15, 23, 42, 0.04) !important;
+    }
+
+    /* Hero Section Fix: Pure Corporate White Container */
+    #page-home section.bg-gradient-to-br,
+    .bg-gradient-to-br.from-\[\#121622\] {
+      background: linear-gradient(135deg, #FFFFFF 0%, #F1F5F9 100%) !important;
+      border: 1px solid #E2E8F0 !important;
+      box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.07) !important;
+    }
+
+    /* Inner Dark Cards to Soft Slate */
+    .bg-slate-900\/90, .bg-slate-900\/80, .bg-slate-900, .bg-slate-950\/80, .bg-slate-950\/70, .bg-slate-950, .bg-\[\#06080F\], .bg-\[\#07090E\], .bg-\[\#040508\] {
+      background: #F1F5F9 !important;
+      border-color: #E2E8F0 !important;
+      color: #0F172A !important;
+    }
+
+    /* Fix Dark Buttons ("Job Apply", "Agency Deliverables", "Order Deliverable") */
+    .bg-slate-800, .bg-slate-800\/80, .bg-slate-800\/90 {
+      background-color: #0F172A !important;
+      color: #FFFFFF !important;
+      border: 1px solid #1E293B !important;
+    }
+    .bg-slate-800:hover, .bg-slate-800\/80:hover {
+      background-color: #1E293B !important;
+      color: #FFFFFF !important;
+    }
+    .bg-slate-800 span, .bg-slate-800\/80 span, .bg-slate-800 text,
+    a.bg-slate-800, a.bg-slate-800\/80, button.bg-slate-800 {
+      color: #FFFFFF !important;
+    }
+
+    /* Text Colors for White Background */
+    .text-white {
+      color: #0F172A !important;
+    }
+    .text-slate-100, .text-slate-200, .text-slate-300 {
+      color: #334155 !important;
+    }
+    .text-slate-400 {
+      color: #64748B !important;
+    }
+    .border-slate-800, .border-slate-800\/80, .border-slate-700 {
+      border-color: #E2E8F0 !important;
+    }
+
+    /* Amber / Gold Text & Warning Box Contrast Fix */
+    .text-amber-400, .text-yellow-400, .text-yellow-300 {
+      color: #B45309 !important;
+    }
+    .bg-amber-500\/10 {
+      background-color: #FEF3C7 !important;
+      border-color: #FCD34D !important;
+    }
+    .bg-amber-500\/10 p, .bg-amber-500\/10 h4, .bg-amber-500\/10 strong {
+      color: #78350F !important;
+    }
+
+    /* Form Fields */
+    input, textarea, select {
+      background-color: #FFFFFF !important;
+      border: 1px solid #CBD5E1 !important;
+      color: #0F172A !important;
+    }
+
+    @keyframes subtleFloat {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-6px); }
+    }
+    .floating-card { animation: subtleFloat 5s ease-in-out infinite; }
+
+    @keyframes tickerLoop {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+    .ticker-track {
+      display: flex;
+      width: 200%;
+      animation: tickerLoop 26s linear infinite;
+    }
+    .ticker-track:hover { animation-play-state: paused; }
+
+    .accordion-content {
+      max-height: 0;
       overflow: hidden;
-      filter: blur(80px);
+      transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
-
-    .orb {
-      position: absolute;
-      border-radius: 50%;
-      opacity: 0.6;
-      animation: floatLiquid 18s infinite alternate ease-in-out;
-    }
-
-    .orb-1 {
-      width: 450px;
-      height: 450px;
-      background: linear-gradient(135deg, #00f2fe, #4facfe);
-      top: -5%;
-      left: 10%;
-    }
-
-    .orb-2 {
-      width: 550px;
-      height: 550px;
-      background: linear-gradient(135deg, #7928ca, #ff0080);
-      bottom: 10%;
-      right: 5%;
-      animation-duration: 22s;
-      animation-delay: -5s;
-    }
-
-    .orb-3 {
-      width: 400px;
-      height: 400px;
-      background: linear-gradient(135deg, #0575e6, #00f260);
-      top: 45%;
-      left: 35%;
-      animation-duration: 16s;
-      animation-delay: -9s;
-    }
-
-    @keyframes floatLiquid {
-      0% {
-        transform: translate(0px, 0px) scale(1) rotate(0deg);
-      }
-      50% {
-        transform: translate(60px, 80px) scale(1.15) rotate(120deg);
-      }
-      100% {
-        transform: translate(-40px, -50px) scale(0.9) rotate(240deg);
-      }
-    }
-
-    /* =========================================================
-       GLASSMORPHISM CORE CLASS
-       ========================================================= */
-    .glass-panel {
-      background: var(--glass-bg);
-      backdrop-filter: blur(var(--glass-blur));
-      -webkit-backdrop-filter: blur(var(--glass-blur));
-      border: 1px solid var(--glass-border);
-      border-radius: 24px;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.2);
-    }
-
-    /* =========================================================
-       NAVIGATION BAR (iOS Island Style)
-       ========================================================= */
-    nav {
-      position: fixed;
-      top: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 90%;
-      max-width: 1100px;
-      padding: 12px 28px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 1000;
-      border-radius: 40px !important;
-    }
-
-    .logo {
-      font-size: 1.35rem;
-      font-weight: 800;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      color: #fff;
-      text-decoration: none;
-      letter-spacing: -0.5px;
-    }
-
-    .logo i {
-      color: var(--accent-cyan);
-      font-size: 1.5rem;
-      filter: drop-shadow(0 0 10px var(--accent-cyan));
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 24px;
-      list-style: none;
-    }
-
-    .nav-links a {
-      color: var(--text-secondary);
-      text-decoration: none;
-      font-size: 0.95rem;
-      font-weight: 500;
-      transition: var(--transition-smooth);
-    }
-
-    .nav-links a:hover {
-      color: #fff;
-    }
-
-    .nav-btn {
-      background: rgba(255, 255, 255, 0.15);
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      color: white;
-      padding: 8px 18px;
-      border-radius: 20px;
-      font-weight: 600;
-      text-decoration: none;
-      font-size: 0.85rem;
-      backdrop-filter: blur(10px);
-      transition: var(--transition-smooth);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .nav-btn:hover {
-      background: white;
-      color: black;
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
-    }
-
-    /* =========================================================
-       HERO SECTION
-       ========================================================= */
-    .hero {
-      padding: 180px 20px 80px;
-      max-width: 1100px;
-      margin: 0 auto;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .badge-pill {
-      background: rgba(0, 242, 254, 0.12);
-      border: 1px solid rgba(0, 242, 254, 0.4);
-      color: var(--accent-cyan);
-      padding: 6px 18px;
-      border-radius: 30px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      margin-bottom: 24px;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .hero h1 {
-      font-size: 3.5rem;
-      font-weight: 800;
-      line-height: 1.15;
-      margin-bottom: 20px;
-      background: linear-gradient(180deg, #FFFFFF 30%, rgba(255, 255, 255, 0.6) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      letter-spacing: -1.5px;
-    }
-
-    .hero p {
-      font-size: 1.15rem;
-      color: var(--text-secondary);
-      max-width: 680px;
-      line-height: 1.6;
-      margin-bottom: 35px;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, #00f2fe, #4facfe);
-      border: none;
-      color: #070913;
-      padding: 14px 28px;
-      border-radius: 30px;
-      font-weight: 700;
-      font-size: 1rem;
-      text-decoration: none;
-      cursor: pointer;
-      box-shadow: 0 10px 25px rgba(0, 242, 254, 0.35);
-      transition: var(--transition-smooth);
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-3px) scale(1.02);
-      box-shadow: 0 15px 35px rgba(0, 242, 254, 0.55);
-    }
-
-    .btn-glass {
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid var(--glass-border);
-      color: white;
-      padding: 14px 28px;
-      border-radius: 30px;
-      font-weight: 600;
-      font-size: 1rem;
-      text-decoration: none;
-      backdrop-filter: blur(16px);
-      transition: var(--transition-smooth);
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .btn-glass:hover {
-      background: rgba(255, 255, 255, 0.18);
-      transform: translateY(-3px);
-    }
-
-    /* Quick Highlight Badges */
-    .highlights {
-      display: flex;
-      gap: 12px;
-      margin-top: 40px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .highlight-chip {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      padding: 8px 16px;
-      border-radius: 16px;
-      font-size: 0.85rem;
-      color: var(--text-secondary);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .highlight-chip i {
-      color: var(--accent-cyan);
-    }
-
-    /* =========================================================
-       SECTION WRAPPERS
-       ========================================================= */
-    .section {
-      max-width: 1100px;
-      margin: 80px auto;
-      padding: 0 20px;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 45px;
-    }
-
-    .section-title h2 {
-      font-size: 2.2rem;
-      font-weight: 800;
-      letter-spacing: -0.8px;
-      margin-bottom: 10px;
-    }
-
-    .section-title p {
-      color: var(--text-secondary);
-      font-size: 1rem;
-    }
-
-    /* =========================================================
-       COURSES & EXAM PREPARATION (7th to 12th + Competitions)
-       ========================================================= */
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 25px;
-    }
-
-    .card {
-      padding: 32px 26px;
-      position: relative;
-      overflow: hidden;
-      transition: var(--transition-smooth);
-    }
-
-    .card:hover {
-      transform: translateY(-6px);
-      border-color: rgba(255, 255, 255, 0.35);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 20px var(--glass-glow);
-    }
-
-    .card-icon {
-      width: 55px;
-      height: 55px;
-      border-radius: 16px;
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.02));
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      margin-bottom: 20px;
-      color: var(--accent-cyan);
-    }
-
-    .card h3 {
-      font-size: 1.35rem;
-      font-weight: 700;
-      margin-bottom: 12px;
-    }
-
-    .card p {
-      color: var(--text-secondary);
-      font-size: 0.95rem;
-      line-height: 1.5;
-      margin-bottom: 20px;
-    }
-
-    .tag-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .tag {
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      padding: 4px 12px;
-      border-radius: 12px;
-      font-size: 0.78rem;
-      font-weight: 600;
-      color: #e0e0e0;
-    }
-
-    /* =========================================================
-       MODULES SECTION (Paid vs Free Modules)
-       ========================================================= */
-    .module-tabs-wrapper {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .tab-nav {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      margin-bottom: 20px;
-    }
-
-    .tab-btn {
-      padding: 10px 24px;
-      border-radius: 20px;
-      border: 1px solid var(--glass-border);
-      background: rgba(255, 255, 255, 0.05);
-      color: var(--text-secondary);
-      cursor: pointer;
-      font-weight: 600;
-      transition: var(--transition-smooth);
-    }
-
-    .tab-btn.active {
-      background: white;
-      color: black;
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
-    }
-
-    .module-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-    }
-
-    .module-item {
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .module-item ul {
-      list-style: none;
-      margin: 15px 0 20px;
-    }
-
-    .module-item ul li {
-      color: var(--text-secondary);
-      font-size: 0.9rem;
-      margin-bottom: 8px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .module-item ul li i {
-      color: #00f2fe;
-      font-size: 0.8rem;
-    }
-
-    /* =========================================================
-       TIMING, BATCH MODES & MENTORSHIP
-       ========================================================= */
-    .split-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 25px;
-    }
-
-    .info-box {
-      padding: 30px;
-    }
-
-    .info-box h3 {
-      font-size: 1.3rem;
-      margin-bottom: 18px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .timeline-item {
-      display: flex;
-      justify-content: space-between;
-      padding: 12px 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      font-size: 0.95rem;
-    }
-
-    .timeline-item:last-child {
-      border-bottom: none;
-    }
-
-    .timeline-item span:first-child {
-      color: var(--text-secondary);
-    }
-
-    .mode-pill {
-      display: inline-block;
-      padding: 4px 10px;
-      border-radius: 8px;
-      font-size: 0.75rem;
-      font-weight: 700;
-      margin-left: 8px;
-    }
-    .pill-online { background: rgba(0, 242, 254, 0.2); color: var(--accent-cyan); }
-    .pill-offline { background: rgba(155, 81, 224, 0.2); color: #d09cf7; }
-
-    /* =========================================================
-       DEMO LECTURE / SECTION
-       ========================================================= */
-    .demo-wrapper {
-      padding: 35px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-
-    .demo-screen {
-      width: 100%;
-      max-width: 800px;
-      height: 380px;
-      border-radius: 20px;
-      background: radial-gradient(circle at center, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.95));
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      margin-top: 25px;
-      cursor: pointer;
-      overflow: hidden;
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
-    }
-
-    .play-btn-circle {
-      width: 75px;
-      height: 75px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.12);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.8rem;
-      color: #fff;
-      transition: var(--transition-smooth);
-    }
-
-    .demo-screen:hover .play-btn-circle {
-      transform: scale(1.15);
-      background: var(--accent-cyan);
-      color: #000;
-      box-shadow: 0 0 30px var(--accent-cyan);
-    }
-
-    /* =========================================================
-       CONTACT & ENQUIRY SECTION
-       ========================================================= */
-    .contact-container {
-      display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap: 30px;
-    }
-
-    .contact-details {
-      padding: 35px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .contact-card-link {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      padding: 14px 18px;
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 16px;
-      color: #fff;
-      text-decoration: none;
-      margin-bottom: 12px;
-      transition: var(--transition-smooth);
-    }
-
-    .contact-card-link:hover {
-      background: rgba(255, 255, 255, 0.1);
-      transform: translateX(6px);
-    }
-
-    .contact-card-link i {
-      font-size: 1.3rem;
-    }
-
-    .whatsapp-accent {
-      color: var(--accent-green) !important;
-    }
-
-    .form-box {
-      padding: 35px;
-    }
-
-    .form-group {
-      margin-bottom: 18px;
-    }
-
-    .form-group label {
-      display: block;
-      font-size: 0.85rem;
-      color: var(--text-secondary);
-      margin-bottom: 8px;
-    }
-
-    .form-control {
-      width: 100%;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      padding: 12px 18px;
-      border-radius: 14px;
-      color: #fff;
-      font-size: 0.95rem;
-      outline: none;
-      transition: var(--transition-smooth);
-    }
-
-    .form-control:focus {
-      border-color: var(--accent-cyan);
-      background: rgba(255, 255, 255, 0.08);
-      box-shadow: 0 0 15px rgba(0, 242, 254, 0.2);
-    }
-
-    select.form-control option {
-      background: #0f172a;
-      color: #fff;
-    }
-
-    /* =========================================================
-       FOOTER
-       ========================================================= */
-    footer {
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      padding: 40px 20px;
-      text-align: center;
-      color: var(--text-secondary);
-      font-size: 0.9rem;
-      margin-top: 80px;
-    }
-
-    /* Floating WhatsApp Pill */
-    .float-wa {
-      position: fixed;
-      bottom: 25px;
-      right: 25px;
-      background: #25d366;
-      color: #fff;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.8rem;
-      box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
-      z-index: 999;
-      text-decoration: none;
-      transition: var(--transition-smooth);
-    }
-
-    .float-wa:hover {
-      transform: scale(1.1) rotate(10deg);
-    }
-
-    /* =========================================================
-       RESPONSIVE DESIGN
-       ========================================================= */
-    @media (max-width: 900px) {
-      .split-grid, .contact-container {
-        grid-template-columns: 1fr;
-      }
-      .nav-links {
-        display: none; /* Can be toggled with mobile burger if needed */
-      }
-      .hero h1 {
-        font-size: 2.5rem;
-      }
-    }
+    .accordion-content.active { max-height: 600px; }
   </style>
 </head>
-<body>
+<body class="bg-[#F8FAFC] text-slate-900 min-h-screen flex flex-col relative overflow-x-hidden">
+  <!-- DYNAMIC HIGH-TECH ENTERPRISE PRELOADER (HERO LOGO SHOWCASE) -->
+  <div id="rammsPreloader" class="fixed inset-0 z-[100] bg-[#F8FAFC] flex flex-col items-center justify-center">
+    <div class="relative flex flex-col items-center max-w-sm w-full text-center">
 
-  <!-- Dynamic Liquid Background Orbs -->
-  <div class="liquid-bg">
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-    <div class="orb orb-3"></div>
+      
+      <!-- Ambient Golden Backlight Aura -->
+      <div class="absolute -inset-10 bg-gradient-to-r from-amber-500/25 via-yellow-500/15 to-amber-600/25 rounded-full blur-3xl animate-pulse"></div>
+      
+      <!-- HERO CORPORATE LOGO CONTAINER (PROMINENT & ENLARGED) -->
+      <div class="relative w-28 h-28 sm:w-32 sm:h-32 rounded-3xl bg-gradient-to-b from-slate-900 via-[#0a0e1a] to-[#04060a] border-2 border-amber-500/50 shadow-[0_0_50px_rgba(245,158,11,0.25)] flex items-center justify-center p-4 mb-5 transform hover:scale-105 transition duration-500">
+        <img src="https://i.ibb.co/8nxXgV3r/file-00000000eaf88208b71aadae7827aebd.png" alt="RAMMS GROUPS Official Logo" class="w-full h-full object-contain filter drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]">
+      </div>
+
+      <!-- Identity & Subtitle -->
+      <h2 class="text-2xl sm:text-3xl font-black heading-font tracking-tight text-white leading-tight">
+        RAMMS GROUPS
+      </h2>
+      <p class="text-[9px] sm:text-[10px] uppercase tracking-widest text-amber-400 font-extrabold mt-1">
+        Realtime Applications, Marketing & Media Solutions
+      </p>
+
+      <!-- Dynamic Micro-Pillars Matrix -->
+      <div class="flex items-center justify-center gap-2 mt-4 text-[10px] sm:text-[11px] text-slate-300 font-medium">
+        <span class="px-2.5 py-1 rounded-lg bg-slate-900/90 border border-slate-800 text-slate-200">Web & App</span>
+        <span class="text-amber-500">•</span>
+        <span class="px-2.5 py-1 rounded-lg bg-slate-900/90 border border-slate-800 text-slate-200">Creative Media</span>
+        <span class="text-amber-500">•</span>
+        <span class="px-2.5 py-1 rounded-lg bg-slate-900/90 border border-amber-500/30 text-amber-300 font-bold">School ERP</span>
+      </div>
+
+      <!-- Live Loading Bar & Progress Counter -->
+      <div class="w-full max-w-[240px] sm:max-w-[270px] mt-6">
+        <div class="flex justify-between items-center text-[10px] font-mono text-slate-400 mb-1.5">
+          <span class="flex items-center gap-1.5 text-amber-400 font-bold">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
+            INITIALIZING
+          </span>
+          <span id="loadPercent" class="text-white font-bold font-mono">0%</span>
+        </div>
+        <div class="w-full h-2 bg-slate-900 rounded-full overflow-hidden border border-slate-800 p-0.5">
+          <div id="preloaderBar" class="h-full bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-500 rounded-full transition-all duration-75 w-0"></div>
+        </div>
+      </div>
+
+    </div>
   </div>
 
-  <!-- iOS Floating Island Header -->
-  <nav class="glass-panel">
-    <a href="#" class="logo">
-      <i class="fa-solid fa-atom"></i>
-      <span>Chemistry Zone</span>
-    </a>
-    <ul class="nav-links">
-      <li><a href="#courses">Courses</a></li>
-      <li><a href="#modules">Modules</a></li>
-      <li><a href="#timing">Batches & Timing</a></li>
-      <li><a href="#mentorship">Mentorship</a></li>
-      <li><a href="#demo">Demo Class</a></li>
-      <li><a href="#about">About</a></li>
-    </ul>
-    <a href="#contact" class="nav-btn">
-      <i class="fa-solid fa-paper-plane"></i> Enroll Now
-    </a>
-  </nav>
+  <!-- BACKGROUND GRAPHICS ENGINE -->
+  <canvas id="canvasEngine" class="fixed inset-0 pointer-events-none z-0 opacity-20"></canvas>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="badge-pill">
-      <i class="fa-solid fa-sparkles"></i> Admissions Open for 2026 - 2027
+  <!-- TOP BAR 1: STATUS TICKER -->
+  <div class="relative z-50 bg-[#040508] border-b border-slate-800/80 text-[11px] font-semibold tracking-wider py-1.5 px-4 sm:px-8 text-slate-300 flex flex-wrap items-center justify-between gap-2">
+    <div class="flex items-center gap-3">
+      <span class="flex items-center gap-1.5 text-emerald-400 font-bold">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+        <span id="liveClockDisplay">SYSTEM TIME</span>
+      </span>
+      <span class="text-slate-700">|</span>
+      <span id="liveDateDisplay" class="text-slate-300">DATE</span>
     </div>
-    <h1>Master Chemistry with Clarity & Precision</h1>
-    <p>
-      Specialized coaching for Class 7th to 12th Board Exams, JEE Main & Advanced, NEET-UG, NDA, and CUET. Flexible Hybrid Learning with interactive doubt clearance.
-    </p>
-    <div class="hero-actions">
-      <a href="https://wa.me/919999999999?text=Hi%20Chemistry%20Zone,%20I%20want%20to%20enquire%20about%20classes" target="_blank" class="btn-primary">
-        <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+    <div class="flex items-center gap-3 text-xs">
+      <span class="text-amber-400 font-bold flex items-center gap-1">
+        <i data-lucide="shield-check" class="w-3.5 h-3.5"></i> Govt. MSME: UDYAM-UP-70-0040454
+      </span>
+      <span class="hidden sm:inline text-slate-700">•</span>
+      <span class="hidden sm:inline text-slate-400">Headquarters: Siddharthnagar, Uttar Pradesh</span>
+    </div>
+  </div>
+
+  <!-- TOP BAR 2: GOLDEN CORPORATE TICKER -->
+  <div class="relative z-40 bg-gradient-to-r from-amber-950/40 via-slate-900 to-amber-950/40 border-b border-amber-500/20 text-[11px] font-bold text-amber-300 uppercase overflow-hidden py-1.5 flex items-center shadow-inner">
+    <div class="ticker-track whitespace-nowrap">
+      <span class="mx-6 flex items-center gap-2">⚡ All-In-One Master Career Bundle at ₹14,000 (Lifetime Access)</span>
+      <span class="mx-6 flex items-center gap-2">🏫 School Management ERP Systems (Scope-Based Custom Pricing)</span>
+      <span class="mx-6 flex items-center gap-2">🚀 Enterprise Website Engineering from ₹40,000</span>
+      <span class="mx-6 flex items-center gap-2">📱 Scalable Mobile Application Development from ₹70,000</span>
+      <span class="mx-6 flex items-center gap-2">🎬 Commercial Creative Media & 4K Video Production</span>
+      <span class="mx-6 flex items-center gap-2">💼 Zero-Fee Certified Affiliate Network</span>
+      <span class="mx-6 flex items-center gap-2">🌴 Goa Lifestyle Milestone Campaign (Target: ₹2,50,000)</span>
+      
+      <!-- Duplicate -->
+      <span class="mx-6 flex items-center gap-2">⚡ All-In-One Master Career Bundle at ₹14,000 (Lifetime Access)</span>
+      <span class="mx-6 flex items-center gap-2">🏫 School Management ERP Systems (Scope-Based Custom Pricing)</span>
+      <span class="mx-6 flex items-center gap-2">🚀 Enterprise Website Engineering from ₹40,000</span>
+      <span class="mx-6 flex items-center gap-2">📱 Scalable Mobile Application Development from ₹70,000</span>
+      <span class="mx-6 flex items-center gap-2">🎬 Commercial Creative Media & 4K Video Production</span>
+      <span class="mx-6 flex items-center gap-2">💼 Zero-Fee Certified Affiliate Network</span>
+      <span class="mx-6 flex items-center gap-2">🌴 Goa Lifestyle Milestone Campaign (Target: ₹2,50,000)</span>
+    </div>
+  </div>
+
+  <!-- NAVIGATION HEADER -->
+  <header class="sticky top-0 z-40 titanium-nav">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- LOGO -->
+      <a href="javascript:void(0)" onclick="navigateToPage('home')" class="flex items-center gap-3 shrink-0">
+        <img src="https://i.ibb.co/8nxXgV3r/file-00000000eaf88208b71aadae7827aebd.png" alt="RAMMS Logo" class="h-10 w-auto object-contain">
+        <div>
+          <span class="text-lg sm:text-xl font-black heading-font tracking-tight text-white block leading-none">RAMMS GROUPS</span>
+          <span class="text-[8px] sm:text-[9px] uppercase tracking-wider text-amber-400 font-semibold block mt-1">Realtime Applications, Marketing & Media Solutions</span>
+        </div>
       </a>
-      <a href="#demo" class="btn-glass">
-        <i class="fa-solid fa-play"></i> Watch Free Demo
-      </a>
-    </div>
 
-    <!-- Quick Highlights -->
-    <div class="highlights">
-      <div class="highlight-chip"><i class="fa-solid fa-laptop-house"></i> Offline & Online Batches</div>
-      <div class="highlight-chip"><i class="fa-solid fa-book-open"></i> Free & Paid Study Modules</div>
-      <div class="highlight-chip"><i class="fa-solid fa-user-graduate"></i> 1-on-1 Mentorship</div>
-      <div class="highlight-chip"><i class="fa-solid fa-calendar-check"></i> Flexible Timing</div>
-    </div>
-  </section>
-
-  <!-- Courses & Competitive Exam Coverage -->
-  <section id="courses" class="section">
-    <div class="section-title">
-      <h2>Targeted Programs & Exam Tracks</h2>
-      <p>Customized curriculum built according to latest NCERT & competitive exam patterns[span_0](start_span)[span_0](end_span).</p>
-    </div>
-    <div class="grid-3">
-      <!-- 7th to 10th Foundation -->
-      <div class="glass-panel card">
-        <div class="card-icon"><i class="fa-solid fa-seedling"></i></div>
-        <h3>Class 7th – 10th Foundation</h3>
-        <p>Building strong core foundations in Physical, Inorganic, and Organic concepts for NTSE, Olympiads, and School Exams[span_1](start_span)[span_1](end_span).</p>
-        <div class="tag-container">
-          <span class="tag">Conceptual Clarity</span>
-          <span class="tag">Foundation</span>
-          <span class="tag">Olympiads</span>
-        </div>
-      </div>
-
-      <!-- 11th & 12th Boards -->
-      <div class="glass-panel card">
-        <div class="card-icon"><i class="fa-solid fa-graduation-cap"></i></div>
-        <h3>Class 11th & 12th (CBSE / State)</h3>
-        <p>Complete board syllabus coverage with numerical solving sessions, reaction mechanisms, and laboratory practical guidance[span_2](start_span)[span_2](end_span).</p>
-        <div class="tag-container">
-          <span class="tag">CBSE</span>
-          <span class="tag">ICSE/State Boards</span>
-          <span class="tag">Answer Writing</span>
-        </div>
-      </div>
-
-      <!-- JEE Main & Advanced -->
-      <div class="glass-panel card">
-        <div class="card-icon"><i class="fa-solid fa-flask-vial"></i></div>
-        <h3>JEE (Main & Advanced)</h3>
-        <p>In-depth analytical problem solving, high-speed calculation tricks, and previous 15 years' question analysis[span_3](start_span)[span_3](end_span).</p>
-        <div class="tag-container">
-          <span class="tag">JEE Main</span>
-          <span class="tag">Advanced</span>
-          <span class="tag">Rank Booster</span>
-        </div>
-      </div>
-
-      <!-- NEET-UG -->
-      <div class="glass-panel card">
-        <div class="card-icon"><i class="fa-solid fa-stethoscope"></i></div>
-        <h3>NEET-UG Chemistry</h3>
-        <p>NCERT line-by-line breakdown, rapid formula recall, reaction maps, and high-accuracy test series[span_4](start_span)[span_4](end_span).</p>
-        <div class="tag-container">
-          <span class="tag">NEET Special</span>
-          <span class="tag">NCERT Extract</span>
-          <span class="tag">Mock Tests</span>
-        </div>
-      </div>
-
-      <!-- NDA -->
-      <div class="glass-panel card">
-        <div class="card-icon"><i class="fa-solid fa-shield-halved"></i></div>
-        <h3>NDA (General Science / Chem)</h3>
-        <p>Smart revision covering general chemistry, everyday chemistry, and fast scoring techniques for NDA aspirants[span_5](start_span)[span_5](end_span).</p>
-        <div class="tag-container">
-          <span class="tag">Defence Exam</span>
-          <span class="tag">High Weightage</span>
-        </div>
-      </div>
-
-      <!-- CUET -->
-      <div class="glass-panel card">
-        <div class="card-icon"><i class="fa-solid fa-building-columns"></i></div>
-        <h3>CUET (Domain Chemistry)</h3>
-        <p>Objective question practice targeted specifically to score 100 percentile in Central University Entrance Test[span_6](start_span)[span_6](end_span).</p>
-        <div class="tag-container">
-          <span class="tag">CUET 2026</span>
-          <span class="tag">Speed & Accuracy</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Paid vs Free Modules Section -->
-  <section id="modules" class="section">
-    <div class="section-title">
-      <h2>Curated Study Modules</h2>
-      <p>Choose between our accessible free resources and comprehensive mastery packages[span_7](start_span)[span_7](end_span).</p>
-    </div>
-
-    <div class="tab-nav">
-      <button class="tab-btn active" onclick="switchTab('free')">Free Modules</button>
-      <button class="tab-btn" onclick="switchTab('paid')">Paid Premium Modules</button>
-    </div>
-
-    <!-- Free Tab Content -->
-    <div id="free-content" class="module-grid">
-      <div class="glass-panel module-item">
-        <div>
-          <h3>Free NCERT Formula Sheets</h3>
-          <p style="color: var(--text-secondary); margin-top: 6px;">Handwritten summaries for quick revision[span_8](start_span)[span_8](end_span).</p>
-          <ul>
-            <li><i class="fa-solid fa-check"></i> Periodic Table short-notes</li>
-            <li><i class="fa-solid fa-check"></i> Important Organic naming reactions</li>
-            <li><i class="fa-solid fa-check"></i> Physical Chemistry formula bank</li>
-          </ul>
-        </div>
-        <a href="#contact" class="btn-glass" style="justify-content: center; font-size: 0.9rem;">Download PDF</a>
-      </div>
-
-      <div class="glass-panel module-item">
-        <div>
-          <h3>Weekly Open Mock Quizzes</h3>
-          <p style="color: var(--text-secondary); margin-top: 6px;">Self-evaluation tests available to all students[span_9](start_span)[span_9](end_span).</p>
-          <ul>
-            <li><i class="fa-solid fa-check"></i> Sunday Chapter-wise test</li>
-            <li><i class="fa-solid fa-check"></i> Instant answer key & score breakdown</li>
-            <li><i class="fa-solid fa-check"></i> All India relative ranking</li>
-          </ul>
-        </div>
-        <a href="#contact" class="btn-glass" style="justify-content: center; font-size: 0.9rem;">Take Free Test</a>
-      </div>
-    </div>
-
-    <!-- Paid Tab Content (Hidden by default) -->
-    <div id="paid-content" class="module-grid" style="display: none;">
-      <div class="glass-panel module-item">
-        <div>
-          <div class="badge-pill" style="margin-bottom: 10px;">PRO MODULE</div>
-          <h3>Full Year Comprehensive Package</h3>
-          <p style="color: var(--text-secondary); margin-top: 6px;">Everything required to secure a top 1% rank[span_10](start_span)[span_10](end_span).</p>
-          <ul>
-            <li><i class="fa-solid fa-check"></i> 5000+ Level-wise Solved Question Bank</li>
-            <li><i class="fa-solid fa-check"></i> Daily Practice Problems (DPP) with video solutions</li>
-            <li><i class="fa-solid fa-check"></i> Printed module delivered at your doorstep</li>
-          </ul>
-        </div>
-        <a href="#contact" class="btn-primary" style="justify-content: center; font-size: 0.9rem;">Get Full Access</a>
-      </div>
-
-      <div class="glass-panel module-item">
-        <div>
-          <div class="badge-pill" style="margin-bottom: 10px;">CRASH COURSE</div>
-          <h3>Rank Booster Question Modules</h3>
-          <p style="color: var(--text-secondary); margin-top: 6px;">Curated for JEE, NEET, and CUET aspirants[span_11](start_span)[span_11](end_span).</p>
-          <ul>
-            <li><i class="fa-solid fa-check"></i> Previous 20 Years' Question Trends</li>
-            <li><i class="fa-solid fa-check"></i> Tricky numericals & mechanism solving sets</li>
-            <li><i class="fa-solid fa-check"></i> 15 Full-length simulated mock exams</li>
-          </ul>
-        </div>
-        <a href="#contact" class="btn-primary" style="justify-content: center; font-size: 0.9rem;">Enroll Now</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Batches, Timing & Mentorship -->
-  <section id="timing" class="section">
-    <div class="split-grid">
-      <!-- Timing Box -->
-      <div class="glass-panel info-box">
-        <h3><i class="fa-solid fa-clock" style="color: var(--accent-cyan);"></i> Batch Timing & Modes</h3>
-        <p style="color: var(--text-secondary); margin-bottom: 16px;">We offer flexible shifts in both Online & Offline modes[span_12](start_span)[span_12](end_span).</p>
+      <!-- DESKTOP NAV -->
+      <nav class="hidden xl:flex items-center gap-1.5 text-xs font-semibold">
+        <button onclick="navigateToPage('home')" class="nav-tab px-3 py-1.5 rounded-xl text-slate-300 hover:text-white transition" data-target="home">Home</button>
+        <button onclick="navigateToPage('courses')" class="nav-tab px-3 py-1.5 rounded-xl text-slate-300 hover:text-white transition" data-target="courses">Pro Courses</button>
+        <button onclick="navigateToPage('calculator')" class="nav-tab px-3 py-1.5 rounded-xl text-slate-300 hover:text-white transition" data-target="calculator">Project ROI Tool</button>
+        <button onclick="navigateToPage('services')" class="nav-tab px-3 py-1.5 rounded-xl text-slate-300 hover:text-white transition" data-target="services">Agency Pricing</button>
+        <button onclick="navigateToPage('affiliate')" class="nav-tab px-3 py-1.5 rounded-xl text-slate-300 hover:text-white transition" data-target="affiliate">Free Affiliate</button>
+        <button onclick="navigateToPage('goa')" class="nav-tab px-3 py-1.5 rounded-xl text-slate-300 hover:text-white transition" data-target="goa">Goa Campaign</button>
+        <button onclick="navigateToPage('leadership')" class="nav-tab px-3 py-1.5 rounded-xl text-slate-300 hover:text-white transition" data-target="leadership">Leadership</button>
         
-        <div class="timeline-item">
-          <span>Morning Batch (Class 11 & 12)</span>
-          <span><strong>06:30 AM – 08:30 AM</strong> <span class="mode-pill pill-offline">Offline</span></span>
+        <!-- COMPLIANCE & LEGAL DROPDOWN -->
+        <div class="relative group">
+          <button class="px-3 py-1.5 rounded-xl text-amber-400 font-bold hover:bg-slate-800/80 transition flex items-center gap-1">
+            Governance & Legal <i data-lucide="chevron-down" class="w-3.5 h-3.5"></i>
+          </button>
+          <div class="hidden group-hover:block absolute left-0 top-full mt-1 w-64 rounded-2xl titanium-card p-2 shadow-2xl border border-amber-500/20 space-y-1 z-50">
+            <button onclick="navigateToPage('msme')" class="w-full text-left px-3 py-2 text-xs rounded-xl hover:bg-amber-600/20 text-slate-200">🏛️ MSME Registration</button>
+            <button onclick="navigateToPage('terms')" class="w-full text-left px-3 py-2 text-xs rounded-xl hover:bg-amber-600/20 text-slate-200">⚖️ Terms of Service & Refunds</button>
+            <button onclick="navigateToPage('privacy')" class="w-full text-left px-3 py-2 text-xs rounded-xl hover:bg-amber-600/20 text-slate-200">🛡️ Privacy Policy (DPDP Act)</button>
+            <button onclick="navigateToPage('antifraud')" class="w-full text-left px-3 py-2 text-xs rounded-xl hover:bg-amber-600/20 text-slate-200">🚨 Anti-Fraud & Legal Action</button>
+            <button onclick="navigateToPage('cyber')" class="w-full text-left px-3 py-2 text-xs rounded-xl hover:bg-amber-600/20 text-slate-200">🔒 DSCI Cyber Security</button>
+            <button onclick="navigateToPage('integrity')" class="w-full text-left px-3 py-2 text-xs rounded-xl hover:bg-amber-600/20 text-slate-200">🤝 Corporate Integrity</button>
+          </div>
         </div>
-        <div class="timeline-item">
-          <span>Foundation Batch (7th – 10th)</span>
-          <span><strong>04:00 PM – 05:30 PM</strong> <span class="mode-pill pill-online">Online</span></span>
+
+        <button onclick="navigateToPage('contact')" class="nav-tab px-3.5 py-1.5 rounded-xl text-slate-300 hover:text-white transition" data-target="contact">Contact Desk</button>
+      </nav>
+
+      <!-- CALL TO ACTIONS -->
+      <div class="hidden sm:flex items-center gap-2.5 shrink-0">
+        <a href="https://forms.gle/t31UxxjykTMxht5D6" target="_blank" class="px-4 py-2 text-xs font-bold uppercase rounded-xl border border-slate-700 bg-slate-800/80 hover:bg-slate-700 text-slate-200 transition">Job Apply</a>
+        <a href="https://forms.gle/eFyUyNoq3sJGnngg9" target="_blank" class="px-4 py-2 text-xs font-bold uppercase rounded-xl bg-gradient-to-r from-amber-500 to-yellow-500 text-slate-950 font-extrabold hover:opacity-95 transition shadow-lg shadow-amber-500/20">Affiliate Free</a>
+      </div>
+
+      <!-- MOBILE HAMBURGER -->
+      <button onclick="toggleMobileNav()" class="xl:hidden p-2 text-slate-300 hover:text-white rounded-xl bg-slate-800/80 border border-slate-700">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+
+    </div>
+
+    <!-- MOBILE DIRECT ACTION BAR -->
+    <div class="sm:hidden px-4 pb-3 pt-1 flex items-center gap-2 border-b border-slate-800/70 bg-[#06080F]">
+      <a href="https://forms.gle/t31UxxjykTMxht5D6" target="_blank" class="flex-1 py-2 text-center text-xs font-bold uppercase rounded-xl border border-slate-700 bg-slate-800/90 text-slate-200 shadow-sm">
+        💼 Job Apply
+      </a>
+      <a href="https://forms.gle/eFyUyNoq3sJGnngg9" target="_blank" class="flex-1 py-2 text-center text-xs font-bold uppercase rounded-xl bg-gradient-to-r from-amber-500 to-yellow-500 text-slate-950 font-extrabold shadow-md shadow-amber-500/20">
+        🔥 Affiliate Free
+      </a>
+    </div>
+
+    <!-- MOBILE EXPANDABLE MENU -->
+    <div id="mobileNavMenu" class="hidden xl:hidden border-t border-slate-800 bg-[#07090E] px-4 py-4 space-y-2 text-xs font-semibold">
+      <div class="grid grid-cols-2 gap-2">
+        <button onclick="navigateToPage('home'); toggleMobileNav()" class="p-2.5 rounded-xl bg-slate-900/90 text-left">Home</button>
+        <button onclick="navigateToPage('courses'); toggleMobileNav()" class="p-2.5 rounded-xl bg-slate-900/90 text-left">Pro Courses</button>
+        <button onclick="navigateToPage('calculator'); toggleMobileNav()" class="p-2.5 rounded-xl bg-slate-900/90 text-left">Project ROI Tool</button>
+        <button onclick="navigateToPage('services'); toggleMobileNav()" class="p-2.5 rounded-xl bg-slate-900/90 text-left">Agency Rates</button>
+        <button onclick="navigateToPage('affiliate'); toggleMobileNav()" class="p-2.5 rounded-xl bg-slate-900/90 text-left">Free Affiliate</button>
+        <button onclick="navigateToPage('goa'); toggleMobileNav()" class="p-2.5 rounded-xl bg-slate-900/90 text-left">Goa Campaign</button>
+        <button onclick="navigateToPage('leadership'); toggleMobileNav()" class="p-2.5 rounded-xl bg-slate-900/90 text-left">Leadership</button>
+        <button onclick="navigateToPage('contact'); toggleMobileNav()" class="p-2.5 rounded-xl bg-slate-900/90 text-left">Contact Desk</button>
+      </div>
+      <div class="pt-2 border-t border-slate-800 grid grid-cols-2 gap-2 text-amber-400">
+        <button onclick="navigateToPage('msme'); toggleMobileNav()" class="p-2 rounded-xl bg-slate-900 text-left">🏛️ MSME Registration</button>
+        <button onclick="navigateToPage('terms'); toggleMobileNav()" class="p-2 rounded-xl bg-slate-900 text-left">⚖️ Terms & Refunds</button>
+        <button onclick="navigateToPage('privacy'); toggleMobileNav()" class="p-2 rounded-xl bg-slate-900 text-left">🛡️ DPDP Privacy</button>
+        <button onclick="navigateToPage('antifraud'); toggleMobileNav()" class="p-2 rounded-xl bg-slate-900 text-left">🚨 Anti-Fraud Notice</button>
+        <button onclick="navigateToPage('cyber'); toggleMobileNav()" class="p-2 rounded-xl bg-slate-900 text-left">🔒 DSCI Cyber</button>
+        <button onclick="navigateToPage('integrity'); toggleMobileNav()" class="p-2 rounded-xl bg-slate-900 text-left">🤝 Corporate Integrity</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <div class="relative z-30 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-1 flex items-center gap-2 text-xs text-slate-400">
+    <span>Corporate Portal</span>
+    <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-600"></i>
+    <span id="activePageBreadcrumb" class="text-amber-400 font-bold uppercase tracking-wider">Enterprise Overview</span>
+  </div>
+
+  <!-- MAIN DYNAMIC CONTENT -->
+  <main class="relative z-20 flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 w-full">
+
+    <!-- PAGE 1: HOME -->
+    <div id="page-home" class="dynamic-page space-y-16">
+      
+      <!-- HERO BANNER -->
+      <section class="relative rounded-3xl p-8 sm:p-14 overflow-hidden border border-slate-200 bg-white shadow-xl">
+        <div class="relative z-10 max-w-3xl space-y-6">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-slate-700 text-amber-400 text-xs font-bold uppercase tracking-wider">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            Govt. MSME Registered • IT Services & Practical Learning
+          </div>
+
+          <h1 class="text-3xl sm:text-6xl font-black heading-font tracking-tight text-white leading-[1.12]">
+            Build Skills. <br>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-yellow-200 to-amber-500">Launch Digital Career.</span>
+          </h1>
+
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            RAMMS GROUPS delivers high-impact digital education, full-stack website engineering, and custom software solutions including School Management ERPs. We operate with strict regulatory compliance and do NOT offer investment schemes or financial advice.
+          </p>
+
+          <div class="flex flex-wrap gap-3.5 pt-2">
+            <button onclick="navigateToPage('courses')" class="px-7 py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider bg-gradient-to-r from-amber-500 to-yellow-500 text-slate-950 font-extrabold hover:opacity-95 transition flex items-center gap-2 shadow-lg shadow-amber-500/20">
+              Explore Pro Courses <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+            <button class="px-6 py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider bg-slate-900 hover:bg-slate-800 border border-slate-900 !text-black transition flex items-center gap-1.5 shadow-md">
+             <span style="color: #92400E !important;">Agency Deliverables</span>
+              </button>
+              <button class="px-6 py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider bg-amber-100 hover:bg-amber-200 border border-amber-300 transition flex items-center gap-1.5 shadow-sm">
+              <span style="color: #92400E !important;">Verify MSME Registration</span>
+               </button>
+              </div>
+
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-8 border-t border-slate-800/80">
+            <div class="p-4 rounded-2xl titanium-card">
+              <i data-lucide="shield-check" class="w-6 h-6 text-emerald-400 mb-2"></i>
+              <h4 class="text-xs font-bold text-white">Zero Upfront Cost</h4>
+              <p class="text-[11px] text-slate-400 mt-0.5">100% Free Job & Affiliate Apply</p>
+            </div>
+            <div class="p-4 rounded-2xl titanium-card">
+              <i data-lucide="code" class="w-6 h-6 text-amber-400 mb-2"></i>
+              <h4 class="text-xs font-bold text-white">IT Development</h4>
+              <p class="text-[11px] text-slate-400 mt-0.5">Websites & School ERP</p>
+            </div>
+            <div class="p-4 rounded-2xl titanium-card">
+              <i data-lucide="video" class="w-6 h-6 text-yellow-400 mb-2"></i>
+              <h4 class="text-xs font-bold text-white">Creative Media</h4>
+              <p class="text-[11px] text-slate-400 mt-0.5">Editing, Branding & Design</p>
+            </div>
+            <div class="p-4 rounded-2xl titanium-card">
+              <i data-lucide="award" class="w-6 h-6 text-amber-400 mb-2"></i>
+              <h4 class="text-xs font-bold text-white">Govt Registered</h4>
+              <p class="text-[11px] text-slate-400 mt-0.5">UDYAM-UP-70-0040454</p>
+            </div>
+          </div>
         </div>
-        <div class="timeline-item">
-          <span>Target JEE / NEET Evening</span>
-          <span><strong>06:00 PM – 08:30 PM</strong> <span class="mode-pill pill-offline">Hybrid</span></span>
+      </section>
+
+      <!-- METRICS SECTION -->
+      <section class="grid grid-cols-2 lg:grid-cols-4 gap-5 text-center">
+        <div class="p-6 rounded-3xl titanium-card">
+          <div class="text-3xl sm:text-4xl font-extrabold text-amber-400 heading-font">450+</div>
+          <div class="text-xs uppercase tracking-wider text-slate-400 mt-1 font-semibold">Projects Delivered</div>
         </div>
-        <div class="timeline-item">
-          <span>Weekend Special (NDA & CUET)</span>
-          <span><strong>10:00 AM – 02:00 PM</strong> <span class="mode-pill pill-online">Online</span></span>
+        <div class="p-6 rounded-3xl titanium-card">
+          <div class="text-3xl sm:text-4xl font-extrabold text-yellow-300 heading-font">98.8%</div>
+          <div class="text-xs uppercase tracking-wider text-slate-400 mt-1 font-semibold">Client Retention</div>
+        </div>
+        <div class="p-6 rounded-3xl titanium-card">
+          <div class="text-3xl sm:text-4xl font-extrabold text-emerald-400 heading-font">100%</div>
+          <div class="text-xs uppercase tracking-wider text-slate-400 mt-1 font-semibold">Quality & SLA Benchmark</div>
+        </div>
+        <div class="p-6 rounded-3xl titanium-card">
+          <div class="text-3xl sm:text-4xl font-extrabold text-amber-400 heading-font">4.7+</div>
+          <div class="text-xs uppercase tracking-wider text-slate-400 mt-1 font-semibold">Years Enterprise Experience</div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- PAGE 2: COURSES -->
+    <div id="page-courses" class="dynamic-page hidden space-y-16">
+      
+      <div class="text-center max-w-3xl mx-auto space-y-3">
+        <span class="text-xs font-bold text-amber-400 uppercase tracking-widest bg-amber-500/10 px-4 py-1.5 rounded-full border border-amber-500/20">
+          Professional Specialization Catalog
+        </span>
+        <h2 class="text-3xl sm:text-5xl font-black heading-font text-white tracking-tight">
+          Practical Industry Courses
+        </h2>
+        <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+          Structured cohort-based digital training. Free digital marketing learning awareness included with every track.
+        </p>
+      </div>
+
+      <!-- 1. VIP MASTER CAREER BUNDLE (₹14,000) -->
+      <div class="rounded-3xl p-6 sm:p-12 titanium-card border-2 border-amber-500/40 relative overflow-hidden shadow-2xl">
+        <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
+          
+          <div class="space-y-4 max-w-2xl text-left">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-[11px] font-black uppercase tracking-wider bg-amber-500 text-slate-950 shadow-md">
+              🔥 Flagship Career Master Bundle • Save ₹2,000
+            </div>
+            
+            <h3 class="text-2xl sm:text-4xl font-black heading-font text-white leading-tight">
+              All-In-One Digital Career Master Bundle
+            </h3>
+            
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+              Website Engineering + Complete 7-Track Creative Media Suite (Video Editing, Vector Logo Design, Banner Advertising, Social Media Creatives, SEO Content Writing, Studio Photo Editing, and Presentation Prototyping). Includes mentorship and official MSME badge certification.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-slate-200 pt-2 border-t border-slate-800">
+              <div class="flex items-center gap-2"><span class="text-amber-400 font-bold">✦</span> Complete Web Dev + 7 Creative Media Modules</div>
+              <div class="flex items-center gap-2"><span class="text-amber-400 font-bold">✦</span> Live Interactive Mentorship Sessions</div>
+              <div class="flex items-center gap-2"><span class="text-amber-400 font-bold">✦</span> Real-World Client Portfolio Deliverables</div>
+              <div class="flex items-center gap-2"><span class="text-amber-400 font-bold">✦</span> Verified Government MSME Official Certificate</div>
+            </div>
+          </div>
+
+          <div class="p-6 sm:p-8 rounded-3xl bg-slate-900/90 border border-slate-700 text-center w-full lg:w-80 space-y-4 shrink-0 shadow-2xl">
+            <span class="text-[10px] uppercase tracking-widest text-slate-400 font-bold block">Master Bundle Price</span>
+            <div>
+              <div class="text-4xl sm:text-5xl font-black text-amber-400 heading-font">₹14,000</div>
+              <div class="text-xs text-slate-400 mt-1">
+                Individual Combined: <span class="line-through text-slate-500">₹16,000</span>
+              </div>
+            </div>   
+            <button onclick="window.open('https://rzp.io/rzp/ramms-groups', '_blank')" type="button" class="w-full py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider bg-gradient-to-r from-amber-500 to-yellow-500 text-slate-950 font-extrabold shadow-xl shadow-amber-500/20 hover:opacity-95 transition flex items-center justify-center gap-2 cursor-pointer">
+  <span>Enroll In Master Bundle</span>
+  <i data-lucide="arrow-right" class="w-4 h-4 pointer-events-none"></i>
+</button>
+            <p class="text-[10px] text-slate-400">Immediate Batch Seat & Digital Badge Allocation</p>
+          </div>
+
         </div>
       </div>
 
-      <!-- Mentorship Box -->
-      <div id="mentorship" class="glass-panel info-box">
-        <h3><i class="fa-solid fa-handshake-angle" style="color: var(--accent-cyan);"></i> 1-on-1 Mentorship</h3>
-        <p style="color: var(--text-secondary); margin-bottom: 16px;">Guidance that goes beyond normal textbook teaching[span_13](start_span)[span_13](end_span).</p>
-        <ul style="list-style: none;">
-          <li style="margin-bottom: 12px; display: flex; gap: 10px;">
-            <i class="fa-solid fa-circle-check" style="color: var(--accent-cyan); margin-top: 4px;"></i>
-            <span><strong>Personal Study Plan:</strong> Individual timetable formulation according to your strengths and weaknesses.</span>
-          </li>
-          <li style="margin-bottom: 12px; display: flex; gap: 10px;">
-            <i class="fa-solid fa-circle-check" style="color: var(--accent-cyan); margin-top: 4px;"></i>
-            <span><strong>Doubt Clearing Sessions:</strong> Dedicated daily 45-minute offline & online 1-on-1 doubt clearing counters.</span>
-          </li>
-          <li style="margin-bottom: 12px; display: flex; gap: 10px;">
-            <i class="fa-solid fa-circle-check" style="color: var(--accent-cyan); margin-top: 4px;"></i>
-            <span><strong>Monthly Parent-Teacher Feedback:</strong> Regular performance tracking and behavioral guidance[span_14](start_span)[span_14](end_span).</span>
-          </li>
+      <!-- 2. INDIVIDUAL TRACKS -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- WEB DEV -->
+        <div class="p-6 sm:p-8 rounded-3xl titanium-card border border-amber-500/30 flex flex-col justify-between hover:border-amber-500 transition duration-300">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <div class="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400">
+                <i data-lucide="code" class="w-6 h-6"></i>
+              </div>
+              <span class="text-[10px] font-bold uppercase tracking-wider text-amber-400 bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/20">Full-Stack Track</span>
+            </div>
+            
+            <h3 class="text-2xl font-bold text-white heading-font">Website Development Pro Course</h3>
+            <p class="text-slate-300 text-xs leading-relaxed">
+              Master modern web design and deployment. Complete practical coverage of HTML5, CSS3, Tailwind CSS, JavaScript functionality, custom domain setup, DNS mapping, and cloud deployments.
+            </p>
+
+            <div class="border border-slate-800 rounded-2xl overflow-hidden">
+              <button onclick="toggleAccordion('webSyllabusAcc')" class="w-full p-3.5 bg-slate-900/90 text-left text-xs font-bold text-amber-400 flex items-center justify-between">
+                <span>View Modular Syllabus (6 Modules)</span>
+                <i data-lucide="chevron-down" class="w-4 h-4"></i>
+              </button>
+              <div id="webSyllabusAcc" class="accordion-content bg-slate-950/70 p-4 space-y-2 text-xs text-slate-300">
+                <p>• <strong>Module 1:</strong> Semantic HTML5, UI Architecture & Modern Web Hierarchy</p>
+                <p>• <strong>Module 2:</strong> Advanced Tailwind CSS, Flexbox/Grid, Dark Mode Glassmorphism</p>
+                <p>• <strong>Module 3:</strong> Modern JavaScript (ES6+), DOM Manipulation, Event Handling</p>
+                <p>• <strong>Module 4:</strong> Corporate Landing Funnels & Dynamic Portfolio Systems</p>
+                <p>• <strong>Module 5:</strong> DNS Configurations, Domain Integration & SSL Encryption</p>
+                <p>• <strong>Module 6:</strong> Netlify CI/CD, Git Deployment & Google Search Console SEO</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-6 mt-6 border-t border-slate-800 space-y-4">
+            <div class="flex items-baseline justify-between">
+              <div>
+                <span class="text-[10px] text-slate-400 uppercase tracking-wider block">Single Course Fee</span>
+                <span class="text-3xl font-black text-white heading-font">₹10,000</span>
+                <span class="text-xs line-through text-slate-500 ml-2">₹20,000</span>
+              </div>
+              <span class="text-[10px] font-bold text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-md border border-emerald-500/20">50% Off</span>
+            </div>
+           <button onclick="window.open('https://rzp.io/rzp/ramms-groups-web-dev', '_blank')" type="button" class="w-full py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold transition shadow-lg shadow-amber-500/20 flex items-center justify-center gap-2 cursor-pointer">
+  <span>Enroll In Web Development</span>
+  <i data-lucide="send" class="w-4 h-4 pointer-events-none"></i>
+</button>
+          </div>
+        </div>
+
+        <!-- CREATIVE MEDIA -->
+        <div class="p-6 sm:p-8 rounded-3xl titanium-card border border-amber-500/30 flex flex-col justify-between hover:border-amber-500 transition duration-300">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <div class="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400">
+                <i data-lucide="palette" class="w-6 h-6"></i>
+              </div>
+              <span class="text-[10px] font-bold uppercase tracking-wider text-amber-400 bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/20">7-in-1 Creative Suite</span>
+            </div>
+            
+            <h3 class="text-2xl font-bold text-white heading-font">Creative Media Master Course</h3>
+            <p class="text-slate-300 text-xs leading-relaxed">
+              Complete creative production suite covering all 7 design tracks: commercial video editing, vector branding, display banners, social creatives, SEO copywriting, photo retouching, and investor pitch decks.
+            </p>
+
+            <div class="border border-slate-800 rounded-2xl overflow-hidden">
+              <button onclick="toggleAccordion('mediaSyllabusAcc')" class="w-full p-3.5 bg-slate-900/90 text-left text-xs font-bold text-amber-400 flex items-center justify-between">
+                <span>View Included 7 Specializations</span>
+                <i data-lucide="chevron-down" class="w-4 h-4"></i>
+              </button>
+              <div id="mediaSyllabusAcc" class="accordion-content bg-slate-950/70 p-4 space-y-2 text-xs text-slate-300">
+                <p>• <strong>1. Video Editing:</strong> Commercial video narrative, Reels & YouTube editing</p>
+                <p>• <strong>2. Logo Design:</strong> Vector corporate brand marks, typography systems</p>
+                <p>• <strong>3. Banner Design:</strong> Social ad creatives, billboard & display marketing</p>
+                <p>• <strong>4. Social Media:</strong> Carousel architectures & branding grid systems</p>
+                <p>• <strong>5. Content Writing:</strong> Search-optimized SEO articles & copywriting</p>
+                <p>• <strong>6. Photo Editing:</strong> Studio retouching, background removal, presets</p>
+                <p>• <strong>7. Presentation Prototyping:</strong> Executive investor slides & pitch decks</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-6 mt-6 border-t border-slate-800 space-y-4">
+            <div class="flex items-baseline justify-between">
+              <div>
+                <span class="text-[10px] text-slate-400 uppercase tracking-wider block">Single Suite Fee</span>
+                <span class="text-3xl font-black text-white heading-font">₹6,000</span>
+                <span class="text-xs line-through text-slate-500 ml-2">₹12,000</span>
+              </div>
+              <span class="text-[10px] font-bold text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-md border border-emerald-500/20">50% Off</span>
+            </div>
+           <button onclick="window.open('https://rzp.io/rzp/ramms-groups-creative-media', '_blank')" type="button" class="w-full py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider bg-gradient-to-r from-amber-500 to-yellow-500 hover:opacity-95 text-slate-950 font-bold transition shadow-lg shadow-amber-500/20 flex items-center justify-center gap-2 cursor-pointer">
+  <span>Enroll In Creative Media</span>
+  <i data-lucide="send" class="w-4 h-4 pointer-events-none"></i>
+</button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- PAGE 3: FREELANCE & AGENCY ROI ESTIMATOR -->
+    <div id="page-calculator" class="dynamic-page hidden space-y-12">
+      <div class="text-center max-w-3xl mx-auto space-y-3">
+        <span class="text-xs font-bold text-amber-400 uppercase tracking-widest bg-amber-500/10 px-3.5 py-1.5 rounded-full border border-amber-500/20">Analytical Estimator</span>
+        <h2 class="text-3xl sm:text-5xl font-extrabold heading-font">Freelance & Project ROI Calculator</h2>
+        <p class="text-slate-400 text-xs sm:text-sm">
+          Simulate prospective project volume, client delivery pricing, and monthly earning capacities based on practical market skills. Purely academic estimation model.
+        </p>
+      </div>
+
+      <div class="max-w-3xl mx-auto p-6 sm:p-10 titanium-card rounded-3xl border border-slate-800 space-y-8">
+        <div class="space-y-6">
+          <div>
+            <div class="flex justify-between items-center mb-2">
+              <label class="text-xs font-semibold text-slate-300 uppercase">Estimated Projects / Clients Per Month</label>
+              <span id="projVal" class="text-sm font-extrabold text-amber-400">4 Projects</span>
+            </div>
+            <input type="range" id="projInput" min="1" max="30" step="1" value="4" class="w-full accent-amber-500 bg-slate-800 h-2 rounded-lg cursor-pointer">
+          </div>
+          <div>
+            <div class="flex justify-between items-center mb-2">
+              <label class="text-xs font-semibold text-slate-300 uppercase">Average Fee Per Deliverable</label>
+              <span id="rateVal" class="text-sm font-extrabold text-emerald-400">₹8,000</span>
+            </div>
+            <input type="range" id="rateInput" min="1000" max="60000" step="1000" value="8000" class="w-full accent-emerald-500 bg-slate-800 h-2 rounded-lg cursor-pointer">
+          </div>
+          <div>
+            <div class="flex justify-between items-center mb-2">
+              <label class="text-xs font-semibold text-slate-300 uppercase">Active Working Months</label>
+              <span id="monthsVal" class="text-sm font-extrabold text-yellow-300">6 Months</span>
+            </div>
+            <input type="range" id="monthsInput" min="1" max="12" step="1" value="6" class="w-full accent-yellow-400 bg-slate-800 h-2 rounded-lg cursor-pointer">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5 pt-4 border-t border-slate-800 text-center">
+          <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
+            <span class="text-[10px] text-slate-400 uppercase tracking-wider block">Estimated Monthly Revenue</span>
+            <div id="monthlyRevenue" class="text-xl font-bold text-white mt-1">₹32,000</div>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
+            <span class="text-[10px] text-slate-400 uppercase tracking-wider block">Total Estimated Projects</span>
+            <div id="totalProjects" class="text-xl font-bold text-emerald-400 mt-1">24 Projects</div>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
+            <span class="text-[10px] text-slate-400 uppercase tracking-wider block">Cumulative Potential Gross</span>
+            <div id="cumulativeRevenue" class="text-xl font-black text-amber-400 mt-1">₹1,92,000</div>
+          </div>
+        </div>
+        
+        <p class="text-[11px] text-slate-500 text-center italic">
+          Disclaimer: This estimation is for conceptual and career-planning analysis only. RAMMS GROUPS provides no guarantee of earnings or client procurement.
+        </p>
+      </div>
+    </div>
+
+    <!-- PAGE 4: COMMERCIAL AGENCY SERVICES (WITH SCHOOL ERP HIGHLIGHT) -->
+<div id="page-services" class="dynamic-page hidden space-y-12">
+      <div class="text-center max-w-3xl mx-auto space-y-3">
+        <span class="text-xs font-bold text-amber-400 uppercase tracking-widest bg-amber-500/10 px-3.5 py-1.5 rounded-full border border-amber-500/20">Agency Deliverables</span>
+        <h2 class="text-3xl sm:text-5xl font-extrabold heading-font">Commercial Agency Pricing</h2>
+        <p class="text-slate-400 text-xs sm:text-sm">High-performance digital products, custom enterprise architectures, and creative agency services.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+                <!-- 1. School Management System ERP (100% PURE CORPORATE ENGLISH) -->
+        <div class="p-6 sm:p-8 rounded-3xl titanium-card flex flex-col justify-between border-t-4 border-amber-400 lg:col-span-3 bg-gradient-to-r from-slate-900/90 via-amber-950/25 to-slate-900/90 shadow-2xl">
+          <div class="space-y-4">
+            
+            <!-- HEADER BADGES -->
+            <div class="flex flex-wrap items-center justify-between gap-3">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-amber-400 bg-amber-500/10 px-3.5 py-1 rounded-full border border-amber-500/20">
+                Institutional Software & ERP
+              </span>
+              <span class="text-xs text-slate-300 font-medium">
+                ⚡ Fully Modular & Custom Scalable Architecture
+              </span>
+            </div>
+
+            <!-- TITLE & PRICING -->
+            <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pt-1">
+              <div class="max-w-2xl space-y-2">
+                <h4 class="text-xl sm:text-2xl font-bold text-white flex items-center gap-2.5 heading-font">
+                  <i data-lucide="graduation-cap" class="w-7 h-7 text-amber-400 shrink-0"></i>
+                  School & College Management System (ERP)
+                </h4>
+                <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                  Comprehensive end-to-end institutional digital infrastructure tailored strictly according to custom institutional requirements.
+                </p>
+              </div>
+
+              <!-- PRICING BOX -->
+              <div class="p-4 rounded-2xl bg-slate-950/80 border border-amber-500/30 text-left lg:text-right shrink-0 min-w-[280px]">
+                <span class="text-[10px] uppercase text-slate-400 block font-bold tracking-wider">Base Deployment & Setup</span>
+                <div class="text-2xl sm:text-3xl font-black text-amber-400 heading-font">₹45,000 – ₹1,20,000+</div>
+                <div class="text-[11px] text-amber-300 font-semibold mt-1">
+                  + Monthly maintenance varies per child / student count
+                </div>
+                <span class="text-[10px] text-slate-400 block mt-0.5">
+                  (Billed monthly based on active student strength)
+                </span>
+              </div>
+            </div>
+
+            <!-- REQUIREMENT-BASED CLAUSE -->
+            <div class="p-4 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-2">
+              <div class="flex items-center gap-2 text-xs font-bold text-slate-200">
+                <i data-lucide="sliders" class="w-4 h-4 text-amber-400"></i>
+                <span>Pricing & Feature Scalability (As Per School Requirements):</span>
+              </div>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                This enterprise software operates entirely on an <strong>"As Per School Requirement"</strong> framework. The overall project expenditure will expand, increase, or decrease based on the exact deployment modules requested—such as Online Admissions, Biometric / Smart RFID Attendance, Integrated Fee Payment Gateways, Examination & Report Card Generation, Staff Payroll, and Parent Notification Dispatch systems.
+              </p>
+            </div>
+
+          </div>
+
+          <!-- ACTION FOOTER -->
+          <div class="pt-5 mt-4 border-t border-slate-800 flex flex-wrap items-center justify-between gap-4">
+            <div class="flex items-center gap-2 text-xs text-slate-400 font-medium">
+              <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+              <span>100% Tailored As Per Institutional Needs & Student Capacity</span>
+            </div>
+            <button onclick="inquireDirectly('School Management System (ERP) Custom Quotation (₹45k - ₹120k+)')" class="w-full sm:w-auto px-7 py-3 rounded-xl text-xs font-bold uppercase tracking-wider bg-gradient-to-r from-amber-500 to-yellow-500 text-slate-950 font-bold hover:opacity-95 transition shadow-lg shadow-amber-500/25 flex items-center justify-center gap-2">
+              <span>Request Custom Proposal & Demo</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- 2. Video Editing -->
+        <div class="p-6 rounded-3xl titanium-card flex flex-col justify-between border-t-4 border-amber-400">
+          <div>
+            <span class="text-[10px] font-bold uppercase text-amber-400">Production</span>
+            <h4 class="text-lg font-bold text-white mt-1">Video Editing</h4>
+            <p class="text-xs text-slate-400 mt-1.5">YouTube, reels, advertisements, and corporate videos.</p>
+            <div class="mt-4 text-2xl font-black text-white">₹149 <span class="text-xs line-through text-slate-500">₹199</span></div>
+            <span class="text-[11px] text-slate-400">Per content piece</span>
+          </div>
+          <button onclick="inquireDirectly('Agency Service: Video Editing (₹149/content)')" class="mt-6 w-full py-2.5 rounded-xl text-xs font-bold bg-slate-800 hover:bg-slate-700 transition">Order Deliverable</button>
+        </div>
+
+        <!-- 3. Logo Design -->
+        <div class="p-6 rounded-3xl titanium-card flex flex-col justify-between border-t-4 border-yellow-400">
+          <div>
+            <span class="text-[10px] font-bold uppercase text-yellow-400">Identity</span>
+            <h4 class="text-lg font-bold text-white mt-1">Logo Design</h4>
+            <p class="text-xs text-slate-400 mt-1.5">Vector brand assets, brand mark identity guidelines.</p>
+            <div class="mt-4 text-2xl font-black text-white">₹99</div>
+            <span class="text-[11px] text-slate-400">One-time standard delivery</span>
+          </div>
+          <button onclick="inquireDirectly('Agency Service: Logo Design (₹99)')" class="mt-6 w-full py-2.5 rounded-xl text-xs font-bold bg-slate-800 hover:bg-slate-700 transition">Order Deliverable</button>
+        </div>
+
+        <!-- 4. Banner Design -->
+        <div class="p-6 rounded-3xl titanium-card flex flex-col justify-between border-t-4 border-amber-400">
+          <div>
+            <span class="text-[10px] font-bold uppercase text-amber-400">Advertising</span>
+            <h4 class="text-lg font-bold text-white mt-1">Banner Design</h4>
+            <p class="text-xs text-slate-400 mt-1.5">Digital advertising creatives and social banners.</p>
+            <div class="mt-4 text-2xl font-black text-white">₹299</div>
+            <span class="text-[11px] text-slate-400">Per banner creative</span>
+          </div>
+          <button onclick="inquireDirectly('Agency Service: Banner Design (₹299)')" class="mt-6 w-full py-2.5 rounded-xl text-xs font-bold bg-slate-800 hover:bg-slate-700 transition">Order Deliverable</button>
+        </div>
+
+        <!-- 5. Website Development -->
+        <div class="p-6 rounded-3xl titanium-card flex flex-col justify-between border-t-4 border-yellow-400">
+          <div>
+            <span class="text-[10px] font-bold uppercase text-yellow-400">Web Engineering</span>
+            <h4 class="text-lg font-bold text-white mt-1">Website Development</h4>
+            <p class="text-xs text-slate-400 mt-1.5">Modern, responsive full-stack websites and corporate portals.</p>
+            <div class="mt-4 text-2xl font-black text-white">₹40k - 60k</div>
+            <span class="text-[11px] text-slate-400">+ Modification & hosting support</span>
+          </div>
+          <button onclick="inquireDirectly('Agency Service: Website Development (₹40k-60k)')" class="mt-6 w-full py-2.5 rounded-xl text-xs font-bold bg-slate-800 hover:bg-slate-700 transition">Initiate Project</button>
+        </div>
+
+        <!-- 6. Mobile App Development -->
+        <div class="p-6 rounded-3xl titanium-card flex flex-col justify-between border-t-4 border-emerald-400">
+          <div>
+            <span class="text-[10px] font-bold uppercase text-emerald-400">Mobile Engineering</span>
+            <h4 class="text-lg font-bold text-white mt-1">Mobile App Dev</h4>
+            <p class="text-xs text-slate-400 mt-1.5">Custom software delivery for Android and iOS systems.</p>
+            <div class="mt-4 text-2xl font-black text-white">₹70k - 80k</div>
+            <span class="text-[11px] text-slate-400">Exclusive client-contracted IT delivery</span>
+          </div>
+          <button onclick="inquireDirectly('Agency Service: Mobile App Dev (₹70k-80k)')" class="mt-6 w-full py-2.5 rounded-xl text-xs font-bold bg-slate-800 hover:bg-slate-700 transition">Initiate Project</button>
+        </div>
+
+        <!-- 7. Photo Editing -->
+        <div class="p-6 rounded-3xl titanium-card flex flex-col justify-between border-t-4 border-amber-400">
+          <div>
+            <span class="text-[10px] font-bold uppercase text-amber-400">Studio</span>
+            <h4 class="text-lg font-bold text-white mt-1">Photo Editing</h4>
+            <p class="text-xs text-slate-400 mt-1.5">Commercial retouching, color grading and background removal.</p>
+            <div class="mt-4 text-2xl font-black text-white">₹49</div>
+            <span class="text-[11px] text-slate-400">Per photo asset</span>
+          </div>
+          <button onclick="inquireDirectly('Agency Service: Photo Editing (₹49)')" class="mt-6 w-full py-2.5 rounded-xl text-xs font-bold bg-slate-800 hover:bg-slate-700 transition">Order Deliverable</button>
+        </div>
+
+        <!-- 8. Social Media Design -->
+        <div class="p-6 rounded-3xl titanium-card flex flex-col justify-between border-t-4 border-yellow-400">
+          <div>
+            <span class="text-[10px] font-bold uppercase text-yellow-400">Retainer</span>
+            <h4 class="text-lg font-bold text-white mt-1">Social Media Suite</h4>
+            <p class="text-xs text-slate-400 mt-1.5">Monthly social carousels, stories, posts and graphics.</p>
+            <div class="mt-4 text-2xl font-black text-white">₹4,999</div>
+            <span class="text-[11px] text-slate-400">Per monthly retainer</span>
+          </div>
+          <button onclick="inquireDirectly('Agency Service: Social Media Retainer (₹4,999)')" class="mt-6 w-full py-2.5 rounded-xl text-xs font-bold bg-slate-800 hover:bg-slate-700 transition">Order Deliverable</button>
+        </div>
+
+        <!-- 9. Content Writing -->
+        <div class="p-6 rounded-3xl titanium-card flex flex-col justify-between border-t-4 border-amber-400">
+          <div>
+            <span class="text-[10px] font-bold uppercase text-amber-400">Copywriting</span>
+            <h4 class="text-lg font-bold text-white mt-1">SEO Content Writing</h4>
+            <p class="text-xs text-slate-400 mt-1.5">Search-optimized blog articles, landing page copy, and scripts.</p>
+            <div class="mt-4 text-2xl font-black text-white">₹0.50 - 1.50</div>
+            <span class="text-[11px] text-slate-400">Per word</span>
+          </div>
+          <button onclick="inquireDirectly('Agency Service: SEO Content Writing')" class="mt-6 w-full py-2.5 rounded-xl text-xs font-bold bg-slate-800 hover:bg-slate-700 transition">Order Deliverable</button>
+        </div>
+
+        <!-- 10. Presentation Design -->
+        <div class="p-6 rounded-3xl titanium-card flex flex-col justify-between border-t-4 border-yellow-400 sm:col-span-2 lg:col-span-1">
+          <div>
+            <span class="text-[10px] font-bold uppercase text-yellow-400">Corporate Decks</span>
+            <h4 class="text-lg font-bold text-white mt-1">Presentation Design</h4>
+            <p class="text-xs text-slate-400 mt-1.5">Executive PowerPoint, investor decks, and animated slides.</p>
+            <div class="mt-4 text-2xl font-black text-white">₹20 - 99</div>
+            <span class="text-[11px] text-slate-400">Per slide</span>
+          </div>
+          <button onclick="inquireDirectly('Agency Service: Presentation Design')" class="mt-6 w-full py-2.5 rounded-xl text-xs font-bold bg-slate-800 hover:bg-slate-700 transition">Order Deliverable</button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- PAGE 5: FREE AFFILIATE -->
+    <div id="page-affiliate" class="dynamic-page hidden space-y-12">
+      <div class="text-center max-w-3xl mx-auto space-y-3">
+        <span class="text-xs font-bold text-amber-400 uppercase tracking-widest bg-amber-500/10 px-3.5 py-1.5 rounded-full border border-amber-500/20">Partnership</span>
+        <h2 class="text-3xl sm:text-5xl font-extrabold heading-font">Zero-Cost Affiliate Network</h2>
+        <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+          Open to students and digital marketers across India. Transparent lead tracking with 100% free registration.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="p-8 rounded-3xl titanium-card space-y-3">
+          <i data-lucide="shield-check" class="w-8 h-8 text-amber-400 mb-2"></i>
+          <h4 class="text-lg font-bold text-white">Zero Upfront Cost</h4>
+          <p class="text-xs text-slate-400 leading-relaxed">We never ask for any registration fees, kit fees, or software fees to join our affiliate network.</p>
+        </div>
+        <div class="p-8 rounded-3xl titanium-card space-y-3">
+          <i data-lucide="trending-up" class="w-8 h-8 text-emerald-400 mb-2"></i>
+          <h4 class="text-lg font-bold text-white">Audited Commission</h4>
+          <p class="text-xs text-slate-400 leading-relaxed">Systematic attribution and clear commission reporting on verified course and service sales.</p>
+        </div>
+        <div class="p-8 rounded-3xl titanium-card space-y-3">
+          <i data-lucide="gift" class="w-8 h-8 text-yellow-400 mb-2"></i>
+          <h4 class="text-lg font-bold text-white">Lifestyle Campaigns</h4>
+          <p class="text-xs text-slate-400 leading-relaxed">Top performing affiliates reaching milestones unlock all-expenses-sponsored corporate retreat rewards.</p>
+        </div>
+      </div>
+
+      <div class="p-8 sm:p-12 titanium-card rounded-3xl border border-slate-800 text-center space-y-6">
+        <h3 class="text-2xl font-bold heading-font text-white">Start Your Affiliate Journey</h3>
+        <p class="text-xs sm:text-sm text-slate-300 max-w-xl mx-auto">Register through our official Google Form with zero upfront investment.</p>
+        <a href="https://forms.gle/eFyUyNoq3sJGnngg9" target="_blank" class="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl font-bold text-xs uppercase bg-gradient-to-r from-amber-500 to-yellow-500 text-slate-950 font-bold shadow-xl shadow-amber-500/20 hover:opacity-95 transition">
+          Join Official Affiliate Network <i data-lucide="external-link" class="w-4 h-4"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- PAGE 6: GOA CAMPAIGN -->
+    <div id="page-goa" class="dynamic-page hidden space-y-12">
+      <div class="rounded-3xl p-8 sm:p-14 titanium-card border border-amber-500/30 relative overflow-hidden bg-gradient-to-r from-amber-950/20 via-slate-900 to-amber-950/20 space-y-6">
+        <div class="max-w-2xl space-y-4">
+          <span class="px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest bg-amber-500 text-slate-950 font-bold">Corporate Incentive</span>
+          <h2 class="text-3xl sm:text-5xl font-black heading-font text-white">Goa Beach Affiliate Retentive Campaign</h2>
+          <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+            Reach the authenticated sales achievement milestone of ₹2,50,000 promoting accredited career courses and digital services to secure an all-expenses-sponsored corporate retreat.
+          </p>
+
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3.5 pt-2 text-center">
+            <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800">
+              <span class="text-[10px] text-slate-400 block uppercase">Reward</span>
+              <span class="text-sm font-bold text-amber-400">Goa Vacation</span>
+            </div>
+            <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800">
+              <span class="text-[10px] text-slate-400 block uppercase">Sales Target</span>
+              <span class="text-sm font-bold text-white">₹2,50,000</span>
+            </div>
+            <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800">
+              <span class="text-[10px] text-slate-400 block uppercase">Duration</span>
+              <span class="text-xs font-bold text-yellow-300">30 Jul - 15 Nov 2026</span>
+            </div>
+            <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800">
+              <span class="text-[10px] text-slate-400 block uppercase">Audit</span>
+              <span class="text-xs font-bold text-emerald-400">100% Verified</span>
+            </div>
+          </div>
+
+          <div class="pt-4 flex flex-wrap gap-3">
+            <a href="https://forms.gle/eFyUyNoq3sJGnngg9" target="_blank" class="px-6 py-3 rounded-xl font-bold text-xs uppercase bg-amber-500 text-slate-950 font-bold hover:bg-amber-400 transition">
+              Enroll In Campaign
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAGE 7: LEADERSHIP -->
+    <div id="page-leadership" class="dynamic-page hidden space-y-12">
+      <div class="text-center max-w-3xl mx-auto space-y-3">
+        <span class="text-xs font-bold text-amber-400 uppercase tracking-widest bg-amber-500/10 px-3.5 py-1.5 rounded-full border border-amber-500/20">The Visionaries</span>
+        <h2 class="text-3xl sm:text-5xl font-extrabold heading-font text-white">The Leadership Driving RAMMS GROUPS</h2>
+        <p class="text-slate-400 text-xs sm:text-sm">Steering compliance, technological innovation, and skill enablement across Indian enterprises.</p>
+      </div>
+
+      <div class="max-w-2xl mx-auto relative titanium-card rounded-3xl p-8 border border-amber-500/30 shadow-2xl overflow-hidden floating-card">
+        <div id="leaderSpotlightContainer" class="relative min-h-[300px] flex items-center justify-center">
+          
+          <div class="leader-spotlight-slide active-slide absolute inset-0 flex flex-col items-center justify-center text-center transition-all duration-700 opacity-100 transform translate-x-0">
+            <div class="w-28 h-28 rounded-full overflow-hidden border-2 border-amber-400 bg-slate-800 shadow-xl mb-3">
+              <img src="https://i.ibb.co/tpnzcyBM/1000015636-1.png" alt="Rupesh Kumar Sinha" class="w-full h-full object-cover">
+            </div>
+            <h4 class="text-xl font-bold text-white">Rupesh Kumar Sinha</h4>
+            <span class="text-xs font-bold text-amber-400 uppercase tracking-wider block mt-0.5">FOUNDER</span>
+            <p class="text-xs text-slate-300 mt-2 max-w-md leading-relaxed">Pioneering structural ecosystems that bridge technical education and transparent entrepreneurial opportunities.</p>
+          </div>
+
+          <div class="leader-spotlight-slide absolute inset-0 flex flex-col items-center justify-center text-center transition-all duration-700 opacity-0 transform translate-x-8 pointer-events-none">
+            <div class="w-28 h-28 rounded-full overflow-hidden border-2 border-yellow-400 bg-slate-800 shadow-xl mb-3">
+              <img src="https://i.ibb.co/n8c15Z67/1000022325-removebg-preview.png" alt="Manas Jha CEO RAMMS GROUPS" class="w-full h-full object-cover">
+            </div>
+            <h4 class="text-xl font-bold text-white">Manas Jha</h4>
+            <span class="text-xs font-bold text-yellow-400 uppercase tracking-wider block mt-0.5">CHIEF EXECUTIVE OFFICER (CEO)</span>
+            <p class="text-xs text-slate-300 mt-2 max-w-md leading-relaxed">Overseeing operational scalability, high-availability web architecture, and enterprise quality governance.</p>
+          </div>
+
+          <div class="leader-spotlight-slide absolute inset-0 flex flex-col items-center justify-center text-center transition-all duration-700 opacity-0 transform translate-x-8 pointer-events-none">
+            <div class="w-28 h-28 rounded-full overflow-hidden border-2 border-amber-400 bg-slate-800 shadow-xl mb-3">
+              <img src="https://i.ibb.co/Pz54DGCJ/1000022267-removebg-preview.png" alt="Mayank Kumar" class="w-full h-full object-cover">
+            </div>
+            <h4 class="text-xl font-bold text-white">Mayank Kumar</h4>
+            <span class="text-xs font-bold text-amber-400 uppercase tracking-wider block mt-0.5">CO-FOUNDER</span>
+            <p class="text-xs text-slate-300 mt-2 max-w-md leading-relaxed">Directing modular educational standards, course effectiveness, and strategic enterprise curricula.</p>
+          </div>
+
+          <div class="leader-spotlight-slide absolute inset-0 flex flex-col items-center justify-center text-center transition-all duration-700 opacity-0 transform translate-x-8 pointer-events-none">
+            <div class="w-28 h-28 rounded-full overflow-hidden border-2 border-emerald-400 bg-slate-800 shadow-xl mb-3">
+              <img src="https://i.ibb.co/rGzXpHJZ/1000022205-removebg-preview.png" alt="Sani Kumar" class="w-full h-full object-cover">
+            </div>
+            <h4 class="text-xl font-bold text-white">Sani Kumar</h4>
+            <span class="text-xs font-bold text-emerald-400 uppercase tracking-wider block mt-0.5">CO-CEO</span>
+            <p class="text-xs text-slate-300 mt-2 max-w-md leading-relaxed">Driving client relations, affiliate community ethics, and multi-channel partner growth.</p>
+          </div>
+
+        </div>
+
+        <div class="flex items-center justify-between pt-5 border-t border-slate-800/80">
+          <button onclick="prevLeaderSlide()" class="p-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300"><i data-lucide="chevron-left" class="w-4 h-4"></i></button>
+          <div class="flex gap-2" id="leaderDotsContainer">
+            <span class="w-2.5 h-2.5 rounded-full bg-amber-400 cursor-pointer" onclick="setLeaderSlide(0)"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-slate-700 cursor-pointer" onclick="setLeaderSlide(1)"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-slate-700 cursor-pointer" onclick="setLeaderSlide(2)"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-slate-700 cursor-pointer" onclick="setLeaderSlide(3)"></span>
+          </div>
+          <button onclick="nextLeaderSlide()" class="p-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300"><i data-lucide="chevron-right" class="w-4 h-4"></i></button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-6">
+        <div class="titanium-card rounded-3xl p-6 text-center border-t-4 border-amber-400 hover:scale-105 transition duration-300">
+          <div class="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-amber-400 bg-slate-800">
+            <img src="https://i.ibb.co/tpnzcyBM/1000015636-1.png" alt="Rupesh Kumar Sinha" class="w-full h-full object-cover">
+          </div>
+          <h4 class="font-bold text-base text-white">Rupesh Kumar Sinha</h4>
+          <span class="text-xs font-bold text-amber-400 uppercase tracking-wider block mt-0.5">FOUNDER</span>
+          <p class="text-[11px] text-slate-400 mt-2.5 leading-relaxed">Visionary architect behind digital ecosystem foundations.</p>
+        </div>
+
+        <div class="titanium-card rounded-3xl p-6 text-center border-t-4 border-yellow-400 hover:scale-105 transition duration-300">
+          <div class="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-yellow-400 bg-slate-800">
+            <img src="https://i.ibb.co/n8c15Z67/1000022325-removebg-preview.png" alt="Manas Jha CEO RAMMS GROUPS" class="w-full h-full object-cover">
+          </div>
+          <h4 class="font-bold text-base text-white">Manas Jha</h4>
+          <span class="text-xs font-bold text-yellow-400 uppercase tracking-wider block mt-0.5">CEO</span>
+          <p class="text-[11px] text-slate-400 mt-2.5 leading-relaxed">Enterprise management, technical operations, and delivery.</p>
+        </div>
+
+        <div class="titanium-card rounded-3xl p-6 text-center border-t-4 border-amber-400 hover:scale-105 transition duration-300">
+          <div class="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-amber-400 bg-slate-800">
+            <img src="https://i.ibb.co/Pz54DGCJ/1000022267-removebg-preview.png" alt="Mayank Kumar" class="w-full h-full object-cover">
+          </div>
+          <h4 class="font-bold text-base text-white">Mayank Kumar</h4>
+          <span class="text-xs font-bold text-amber-400 uppercase tracking-wider block mt-0.5">CO-FOUNDER</span>
+          <p class="text-[11px] text-slate-400 mt-2.5 leading-relaxed">Course quality engineering and modular curricula design.</p>
+        </div>
+
+        <div class="titanium-card rounded-3xl p-6 text-center border-t-4 border-emerald-400 hover:scale-105 transition duration-300">
+          <div class="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-emerald-400 bg-slate-800">
+            <img src="https://i.ibb.co/rGzXpHJZ/1000022205-removebg-preview.png" alt="Sani Kumar" class="w-full h-full object-cover">
+          </div>
+          <h4 class="font-bold text-base text-white">Sani Kumar</h4>
+          <span class="text-xs font-bold text-emerald-400 uppercase tracking-wider block mt-0.5">CO-CEO</span>
+          <p class="text-[11px] text-slate-400 mt-2.5 leading-relaxed">Growth optimization, brand partnerships, and community.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAGE 8: MSME ACCREDITATION -->
+    <div id="page-msme" class="dynamic-page hidden space-y-8">
+      <div class="text-center max-w-3xl mx-auto space-y-2">
+        <span class="text-xs font-bold text-amber-400 uppercase tracking-widest bg-amber-500/10 px-3.5 py-1.5 rounded-full border border-amber-500/20">Statutory Recognition</span>
+        <h2 class="text-3xl sm:text-5xl font-extrabold heading-font text-white">Government MSME Udyam Registration</h2>
+        <p class="text-slate-400 text-xs sm:text-sm">Ministry of Micro, Small and Medium Enterprises • Government of India</p>
+      </div>
+
+      <div class="max-w-4xl mx-auto titanium-card p-6 sm:p-10 rounded-3xl border-2 border-amber-500/40 space-y-8">
+        
+        <div class="p-5 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-center space-y-3">
+          <p class="text-xs text-slate-200">
+            Verify our permanent corporate registration directly on the Ministry of MSME national portal:
+          </p>
+          <a href="https://udyamregistration.gov.in/Udyam_Verify.aspx" target="_blank" class="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl font-bold text-xs uppercase bg-amber-500 text-slate-950 hover:bg-amber-400 transition font-bold">
+            <span>Verify UDYAM-UP-70-0040454 on National Portal</span>
+            <i data-lucide="external-link" class="w-4 h-4"></i>
+          </a>
+        </div>
+
+        <div class="rounded-2xl overflow-hidden border border-slate-700 shadow-2xl bg-slate-900">
+          <img src="https://i.ibb.co/HjBKMNd/IMG-20260925-WA0004.jpg" alt="MSME Registration Certificate" class="w-full h-auto object-contain max-h-[700px]">
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+          <div class="p-4 rounded-2xl bg-slate-900/80 border border-slate-800">
+            <span class="text-slate-400 block uppercase text-[10px]">Udyam Registration Number</span>
+            <strong class="text-amber-400 text-base">UDYAM-UP-70-0040454</strong>
+          </div>
+          <div class="p-4 rounded-2xl bg-slate-900/80 border border-slate-800">
+            <span class="text-slate-400 block uppercase text-[10px]">Enterprise Classification</span>
+            <strong class="text-white text-base">MICRO (Services) • 2026-27</strong>
+          </div>
+          <div class="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 sm:col-span-2">
+            <span class="text-slate-400 block uppercase text-[10px]">Registered Headquarters</span>
+            <p class="text-white mt-1">Siddharthnagar, Uttar Pradesh, India</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAGE 9: TERMS AND CONDITIONS OF SERVICE & REFUNDS -->
+    <div id="page-terms" class="dynamic-page hidden space-y-8">
+      <div class="text-center max-w-3xl mx-auto space-y-2">
+        <span class="text-xs font-bold text-amber-400 uppercase tracking-widest bg-amber-500/10 px-3.5 py-1.5 rounded-full border border-amber-500/20">Legal Governance</span>
+        <h2 class="text-3xl sm:text-5xl font-extrabold heading-font text-white">Terms and Conditions of Service</h2>
+        <p class="text-slate-400 text-xs sm:text-sm">Operating Legal Entity: RAMMS GROUPS (MSME Registered Enterprise) • Effective Date: October 2026</p>
+      </div>
+
+      <div class="max-w-4xl mx-auto titanium-card p-8 sm:p-12 rounded-3xl border border-slate-800 space-y-6 text-xs text-slate-300 leading-relaxed">
+        
+        <div class="p-5 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-amber-200 space-y-3">
+          <h4 class="font-bold text-sm uppercase">Important Statutory & Regulatory Disclaimers</h4>
+          <p><strong>1. No Income or Earning Guarantee:</strong> RAMMS GROUPS operates strictly as a skill-enablement, digital education, and Information Technology (IT) services enterprise. We do NOT make any promises, guarantees, representations, or projections regarding individual income, freelancing earnings, job placements, or financial returns. Any earning potential is entirely dependent on individual diligence, personal effort, technical ability, skill implementation, and prevailing independent market demands. Enrolling in any course or training track does NOT guarantee financial success or passive income.</p>
+          <p><strong>2. Non-Registration with SEBI:</strong> RAMMS GROUPS is NOT registered with the Securities and Exchange Board of India (SEBI) as an Investment Adviser, Portfolio Manager, or Research Analyst. Any calculators, financial estimation tools, project fee estimators, or business analytics presented on our portal are purely academic and simulation aids. They do not constitute financial advice, investment counsel, or stock market tips under any circumstance.</p>
+        </div>
+
+        <section class="space-y-2">
+          <h4 class="text-sm font-bold text-white uppercase">1. Scope of Business Operations</h4>
+          <p><strong>Digital Skill Training Tracks:</strong> Structured self-paced and cohort-based educational modules focusing on Video Editing, Website Development, Graphic Design, Photo Editing, Social Media Creatives, Content Writing, and Presentation Prototyping. Digital marketing learning awareness is offered completely free of cost.</p>
+          <p><strong>Information Technology & Software Services:</strong> Custom commercial software development, corporate website creation, School Management ERP Systems, visual branding, logo identity, and custom Mobile Application Development. Mobile application development is delivered exclusively as a client-contracted IT service and is NOT provided as a training course.</p>
+          <p><strong>Free Employment Opportunities:</strong> Job applications for positions such as Sales Executive or associated internal freelance roles are 100% free of charge. RAMMS GROUPS never charges registration fees, security deposits, or upfront onboarding fees from job applicants.</p>
+        </section>
+
+        <section class="space-y-2">
+          <h4 class="text-sm font-bold text-white uppercase">2. User Accounts and Platform Integrity</h4>
+          <p>Users must submit accurate, authentic, and verifiable personal contact credentials upon signup.</p>
+          <p>Course access credentials and student dashboard accounts are strictly non-transferable and intended solely for single-user use.</p>
+          <p>Account sharing, illegal reselling, digital asset pirating, or automated content scraping will result in immediate and permanent account suspension without compensation or refund.</p>
+        </section>
+
+        <section class="space-y-2">
+          <h4 class="text-sm font-bold text-white uppercase">3. Intellectual Property Rights</h4>
+          <p>All proprietary video lectures, syllabus structures, source codes, graphical assets, UI/UX templates, and software frameworks hosted on rammsgroups.site remain the exclusive intellectual property of RAMMS GROUPS. Clients and students receive a limited, revocable, non-exclusive license for personal educational learning or contracted operational use only.</p>
+        </section>
+
+        <section class="space-y-2">
+          <h4 class="text-sm font-bold text-white uppercase">4. Affiliate Referral Policy, Anti-Fraud Governance & Legal Action</h4>
+          <p><strong>Honest Promotion Mandate:</strong> Affiliates are strictly prohibited from marketing RAMMS GROUPS products with misleading claims, including "guaranteed monthly salary", "passive income formulas", "daily investment returns", or "stock tips".</p>
+          <p><strong>No Direct Fund Collections:</strong> All transactions must be completed through the official website gateway. Affiliates are forbidden from accepting funds into private personal UPI IDs or personal bank accounts on behalf of RAMMS GROUPS.</p>
+          <p><strong>Immediate Legal Prosecution for Misrepresentation:</strong> If an affiliate is found defrauding consumers, presenting deceptive marketing materials, or collecting unauthorized payments, RAMMS GROUPS reserves the absolute right to terminate their affiliate status immediately, permanently freeze pending commissions, and file direct criminal complaints and civil damage lawsuits under the Bharatiya Nyaya Sanhita (BNS) and the Information Technology Act, 2000.</p>
+          <p><strong>Direct Corporate Consumer Redressal:</strong> RAMMS GROUPS directly manages and reviews any genuine customer disputes resulting from affiliate misrepresentation and processes authorized refunds in accordance with our corporate refund guidelines.</p>
+        </section>
+
+        <section class="space-y-2">
+          <h4 class="text-sm font-bold text-white uppercase">5. Refund and Cancellation Guidelines</h4>
+          <p><strong>Digital Training Courses (7-Day Policy):</strong> Learners may request a full refund within seven (7) calendar days of purchasing an educational training track, provided they have consumed less than 20% of the course modules and have not downloaded proprietary resources, templates, or completion certificates.</p>
+          <p><strong>IT Services & Custom Development:</strong> Architecture setup fees for custom software, web, or ERP projects are non-refundable once engineering sprints commence. Milestone-linked service charges are refundable only if RAMMS GROUPS fails to meet mutually agreed development benchmarks.</p>
+          <p><strong>Processing Channel:</strong> Refund requests must be directed to support@rammsgroups.site (or rammsgroups0001@gmail.com) along with the official Order ID and purchase verification. Approved claims are credited to the original payment source within 5 to 7 business days.</p>
+        </section>
+
+        <section class="space-y-2">
+          <h4 class="text-sm font-bold text-white uppercase">6. Limitation of Liability and Jurisdiction</h4>
+          <p>RAMMS GROUPS, its founders, and executive management shall not be held liable for any indirect, operational, or consequential business losses arising from independent freelancing pursuits, client projects, or third-party web hosting interruptions.</p>
+          <p>These Terms of Service are governed entirely by the laws of India. Any legal claim or judicial proceeding arising from platform usage shall be subject exclusively to the jurisdiction of the competent courts having authority over the Company's registered operating location in India.</p>
+        </section>
+
+      </div>
+    </div>
+
+    <!-- PAGE 10: PRIVACY POLICY (DPDP ACT 2023) -->
+    <div id="page-privacy" class="dynamic-page hidden space-y-8">
+      <div class="text-center max-w-3xl mx-auto space-y-2">
+        <span class="text-xs font-bold text-emerald-400 uppercase tracking-widest bg-emerald-500/10 px-3.5 py-1.5 rounded-full border border-emerald-500/20">Data Protection</span>
+        <h2 class="text-3xl sm:text-5xl font-extrabold heading-font text-white">Privacy Policy</h2>
+        <p class="text-slate-400 text-xs sm:text-sm">Operating Entity: RAMMS GROUPS (MSME Registered Enterprise) • Effective Date: October 2026</p>
+      </div>
+
+      <div class="max-w-4xl mx-auto titanium-card p-8 sm:p-12 rounded-3xl border border-slate-800 space-y-6 text-xs text-slate-300 leading-relaxed">
+        
+        <div class="p-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-300">
+          <h4 class="font-bold text-sm uppercase">1. Our Commitment to Data Protection</h4>
+          <p class="mt-1">RAMMS GROUPS values the privacy of its students, clients, affiliate partners, and job applicants. We comply with the Digital Personal Data Protection (DPDP) Act of India to ensure that all user data remains secure, encrypted, and protected against unauthorized access.</p>
+        </div>
+
+        <section class="space-y-2">
+          <h4 class="text-sm font-bold text-white uppercase">2. Information We Collect</h4>
+          <p>We collect only necessary information required to deliver services, manage accounts, and verify identities:</p>
+          <ul class="list-disc list-inside space-y-1 text-slate-300">
+            <li><strong>Students & Course Learners:</strong> Full Name, Email Address, Contact Number, Enrolled Course Details, and Learning Progress.</li>
+            <li><strong>IT & Agency Clients:</strong> Business Name, Project Requirements, Authorized Representative Details, and Billing Information.</li>
+            <li><strong>Job Applicants & Employees:</strong> Resume details, educational qualification records, government ID verification details, and assigned official ID badge records.</li>
+            <li><strong>Affiliate Partners:</strong> Registered Contact Details, Verified Government ID proof, assigned Affiliate ID credentials, and official banking information for verified commission payouts.</li>
+            <li><strong>Technical Logs:</strong> IP address, browser type, and device identifiers to protect accounts against illegal account sharing and cyber threats.</li>
+          </ul>
+        </section>
+
+        <section class="space-y-2">
+          <h4 class="text-sm font-bold text-white uppercase">3. Mandatory Identity Verification & Official ID Cards</h4>
+          <p>To prevent fraud, impersonation, and unauthorized representation:</p>
+          <ul class="list-disc list-inside space-y-1 text-slate-300">
+            <li>Every verified student, affiliate partner, and job executive is assigned a unique system ID and an Official Digital Identity Badge/Card.</li>
+            <li>Official ID credentials must be maintained securely and cannot be shared, cloned, or transferred to third parties.</li>
+          </ul>
+        </section>
+
+        <section class="space-y-2">
+          <h4 class="text-sm font-bold text-white uppercase">4. Zero Data Selling & Financial Security</h4>
+          <p><strong>No Data Selling:</strong> RAMMS GROUPS does NOT sell, rent, monetize, trade, or distribute user, client, or employee data to any third-party marketing agency or data broker.</p>
+          <p><strong>Payment Processing Security:</strong> All transactions are routed through RBI-authorized payment gateways. RAMMS GROUPS never stores card PINs, UPI PINs, or bank passwords on its servers.</p>
+        </section>
+
+      </div>
+    </div>
+
+    <!-- PAGE 11: ANTI-FRAUD, FINANCIAL MISCONDUCT & LEGAL PROSECUTION -->
+    <div id="page-antifraud" class="dynamic-page hidden space-y-8">
+      <div class="text-center max-w-3xl mx-auto space-y-2">
+        <span class="text-xs font-bold text-red-400 uppercase tracking-widest bg-red-500/10 px-3.5 py-1.5 rounded-full border border-red-500/20">Criminal Penal Enforcement</span>
+        <h2 class="text-3xl sm:text-5xl font-extrabold heading-font text-white">Anti-Fraud, Financial Misconduct & Legal Prosecution</h2>
+        <p class="text-slate-400 text-xs sm:text-sm">Zero Tolerance for Cheating, Unauthorized Surcharges, and Financial Malpractice</p>
+      </div>
+
+      <div class="max-w-4xl mx-auto titanium-card p-8 sm:p-12 rounded-3xl border-2 border-red-500/40 space-y-6 text-xs text-slate-300 leading-relaxed">
+        
+        <div class="p-5 rounded-2xl bg-red-950/40 border border-red-500/40 text-slate-200 space-y-2">
+          <h4 class="font-bold text-sm text-red-400 uppercase">1. Prohibition of Unauthorized Overcharging</h4>
+          <p>All official product and service prices are strictly fixed on rammsgroups.site.</p>
+          <p>No affiliate partner, sales executive, employee, or agent is authorized to charge or collect any additional fee—even as small as <strong>₹0.01 (One Paisa)</strong>—beyond the officially displayed invoice price.</p>
+          <p>Collecting cash, demanding personal commissions, or taking direct payments into private personal UPI IDs or personal bank accounts is treated as criminal fraud and theft.</p>
+        </div>
+
+        <section class="space-y-2">
+          <h4 class="text-sm font-bold text-white uppercase">2. Direct Criminal Prosecution & Indian Laws (BNS & IT Act)</h4>
+          <p>If any affiliate, contractor, sales executive, or individual is found:</p>
+          <ul class="list-disc list-inside space-y-1 text-slate-300">
+            <li>Cheating, defrauding, or attempting to steal company or client funds,</li>
+            <li>Overcharging any client or collecting unapproved fees,</li>
+            <li>Misrepresenting company offerings or committing identity theft using fake company letterheads or fake ID cards,</li>
+          </ul>
+          <p><strong>RAMMS GROUPS will immediately initiate:</strong></p>
+          <p><strong>Direct Criminal FIR & Police Action:</strong> Under relevant sections of the Bharatiya Nyaya Sanhita (BNS) (including provisions for Cheating, Criminal Breach of Trust, and Extortion) and the Information Technology Act, 2000 (for computer-related fraud and cyber identity theft).</p>
+          <p><strong>Permanent Termination & Blacklisting:</strong> The immediate termination of their contract, permanent revocation of their ID badge, and forfeiture of all pending commissions or salaries.</p>
+        </section>
+
+        <div class="p-4 rounded-xl bg-slate-900 border border-red-500/40 text-amber-300 font-semibold">
+          ⚖️ <strong>3. Recovery of All Legal, Court & Damages Costs:</strong> Any person or entity engaging in financial fraud or malpractice against RAMMS GROUPS shall be held personally liable for all civil damages. The wrongdoer shall legally bear 100% of all legal expenses, advocate fees, court filing costs, and administrative investigation damages incurred by RAMMS GROUPS. The Company will legally recover every single rupee through civil recovery suits and attachment of assets.
+        </div>
+
+      </div>
+    </div>
+
+    <!-- PAGE 12: DSCI CYBER SECURITY PLEDGE -->
+    <div id="page-cyber" class="dynamic-page hidden space-y-8">
+      <div class="text-center max-w-3xl mx-auto space-y-2">
+        <span class="text-xs font-bold text-amber-400 uppercase tracking-widest bg-amber-500/10 px-3.5 py-1.5 rounded-full border border-amber-500/20">Cyber Governance</span>
+        <h2 class="text-3xl sm:text-5xl font-extrabold heading-font text-white">Cyber Security Awareness Pledge</h2>
+        <p class="text-slate-400 text-xs sm:text-sm">Data Security Council of India (DSCI) • #BeCyberSmart</p>
+      </div>
+
+      <div class="max-w-3xl mx-auto titanium-card p-6 sm:p-10 rounded-3xl border border-amber-500/30 space-y-6 text-center">
+        <div class="rounded-2xl overflow-hidden border border-slate-700 shadow-2xl bg-slate-900">
+          <img src="https://i.ibb.co/SzGwKjp/download.jpg" alt="Cyber Security Certificate" class="w-full h-auto object-contain max-h-[600px]">
+        </div>
+
+        <div class="pt-2 flex justify-around text-xs text-slate-300 border-t border-slate-800">
+          <div>
+            <span class="block font-bold text-white">Certificate Identifier</span>
+            <span class="text-amber-400 font-bold">4788734496</span>
+          </div>
+          <div>
+            <span class="block font-bold text-white">Pledge Date</span>
+            <span>September 26, 2026</span>
+          </div>
+          <div>
+            <span class="block font-bold text-white">Audit Status</span>
+            <span class="text-emerald-400 font-bold">DSCI Verified</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAGE 13: INTEGRITY PLEDGE -->
+    <div id="page-integrity" class="dynamic-page hidden space-y-8">
+      <div class="text-center max-w-3xl mx-auto space-y-2">
+        <span class="text-xs font-bold text-emerald-400 uppercase tracking-widest bg-emerald-500/10 px-3.5 py-1.5 rounded-full border border-emerald-500/20">Corporate Ethics</span>
+        <h2 class="text-3xl sm:text-5xl font-extrabold heading-font text-white">Corporate Integrity Pledge</h2>
+        <p class="text-slate-400 text-xs sm:text-sm">Committed to highest corporate ethics, zero corruption, and fair trade practices</p>
+      </div>
+
+      <div class="max-w-3xl mx-auto titanium-card p-6 sm:p-10 rounded-3xl border border-emerald-500/30 space-y-6">
+        <div class="rounded-2xl overflow-hidden border border-slate-700 shadow-2xl bg-slate-900">
+          <img src="https://i.ibb.co/mrYVqJgf/download-1.jpg" alt="Integrity Pledge Certificate" class="w-full h-auto object-contain max-h-[600px]">
+        </div>
+
+        <div class="pt-2 border-t border-slate-800 text-xs text-slate-300 flex justify-between items-center">
+          <div>
+            <span class="text-[10px] uppercase text-slate-400 block font-bold">Authorized Signatory</span>
+            <strong class="text-white">Sani Kumar</strong> (Co-Chief Executive Officer)
+          </div>
+          <div class="text-right">
+            <span class="text-emerald-400 font-bold">Anti-Corruption Pledged</span><br>
+            <span>Uttar Pradesh, 26th Sep 2026</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAGE 14: CONTACT US -->
+    <div id="page-contact" class="dynamic-page hidden space-y-12">
+      <div class="text-center max-w-3xl mx-auto space-y-3">
+        <span class="text-xs font-bold text-amber-400 uppercase tracking-widest bg-amber-500/10 px-3.5 py-1.5 rounded-full border border-amber-500/20">Official Grievance Desk</span>
+        <h2 class="text-3xl sm:text-5xl font-extrabold heading-font">Connect with RAMMS GROUPS</h2>
+        <p class="text-slate-400 text-xs sm:text-sm">Direct communications logged directly into executive database and customer ticketing desk.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div class="space-y-4">
+          <div class="p-6 rounded-3xl titanium-card flex items-start gap-4">
+            <i data-lucide="mail" class="w-6 h-6 text-amber-400 shrink-0 mt-0.5"></i>
+            <div>
+              <span class="text-xs text-slate-400 uppercase block font-semibold">Corporate Email</span>
+              <a href="mailto:rammsgroups0001@gmail.com" class="text-sm font-bold text-white hover:underline">rammsgroups0001@gmail.com</a>
+            </div>
+          </div>
+
+          <div class="p-6 rounded-3xl titanium-card flex items-start gap-4">
+            <i data-lucide="phone" class="w-6 h-6 text-emerald-400 shrink-0 mt-0.5"></i>
+            <div>
+              <span class="text-xs text-slate-400 uppercase block font-semibold">Direct Desk Hotline</span>
+              <a href="tel:7991245586" class="text-sm font-bold text-white hover:underline">+91 7991245586</a>
+            </div>
+          </div>
+
+          <div class="p-6 rounded-3xl titanium-card flex items-start gap-4">
+            <i data-lucide="map-pin" class="w-6 h-6 text-yellow-400 shrink-0 mt-0.5"></i>
+            <div>
+              <span class="text-xs text-slate-400 uppercase block font-semibold">Corporate Headquarters</span>
+              <p class="text-xs font-bold text-white leading-relaxed">
+                Siddharthnagar, Uttar Pradesh, India
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-2 p-8 sm:p-10 titanium-card rounded-3xl border border-slate-800">
+       <form name="submit-to-google-sheet" id="leadContactForm" class="space-y-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-semibold uppercase text-slate-300 mb-1.5">Full Legal Name *</label>
+                <input type="text" id="contactName" name="Full Name" required placeholder="Full Name" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 focus:border-amber-500 text-white text-xs outline-none">
+              </div>
+              <div>
+                <label class="block text-xs font-semibold uppercase text-slate-300 mb-1.5">Mobile Contact *</label>
+                <input type="tel" id="contactPhone" name="Phone" required placeholder="10 Digit Phone Number" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 focus:border-amber-500 text-white text-xs outline-none">
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-semibold uppercase text-slate-300 mb-1.5">Email Address *</label>
+                <input type="email" id="contactEmail" name="Email" required placeholder="you@domain.com" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 focus:border-amber-500 text-white text-xs outline-none">
+              </div>
+              <div>
+                <label class="block text-xs font-semibold uppercase text-slate-300 mb-1.5">Select Subject *</label>
+                <select id="contactService" name="Subject" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 focus:border-amber-500 text-white text-xs outline-none">
+                  <option>School & College Management System (ERP)</option>
+                  <option>All-In-One Digital Career Master Bundle (₹14,000)</option>
+                  <option>Website Development Pro Course (₹10,000)</option>
+                  <option>Creative Media Master Course (₹6,000)</option>
+                  <option>Agency Web Development Services</option>
+                  <option>Agency Mobile App Services</option>
+                  <option>Free Affiliate Network Registration</option>
+                  <option>Corporate Job Application</option>
+                  <option>Official Consumer Grievance</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-semibold uppercase text-slate-300 mb-1.5">Requirements / Message *</label>
+              <textarea id="contactMessage" name="Message" rows="4" required placeholder="Specify your requirements or questions..." class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 focus:border-amber-500 text-white text-xs outline-none"></textarea>
+            </div>
+
+            <button type="submit" id="submitLeadBtn" class="w-full py-4 rounded-xl font-bold text-xs uppercase tracking-wider bg-gradient-to-r from-amber-500 to-yellow-500 text-slate-950 font-bold shadow-lg shadow-amber-500/20 hover:opacity-95 transition flex items-center justify-center gap-2">
+              <span id="btnSubmitText">Submit to Executive Desk</span>
+              <i data-lucide="send" class="w-4 h-4"></i>
+            </button>
+            <p id="formStatusMsg" class="hidden text-center text-xs font-bold text-emerald-400 mt-2">✅ Message recorded successfully in our database!</p>
+          </form>
+          <script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbyohcQfvm9ABlK7SnHoM6GfW3CbsheZcSq3vdbqKoQUck-Vvt0pq-OSN4HMpOVcbtZ6/exec'
+  const form = document.forms['submit-to-google-sheet']
+
+  if (form) {
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      const submitBtn = form.querySelector('button[type="submit"]') || form.querySelector('button')
+      const originalText = submitBtn ? submitBtn.innerText : 'SUBMIT'
+      if (submitBtn) submitBtn.innerText = "Submitting..."
+
+      fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+        .then(response => {
+          alert('धन्यवाद! आपका डेटा Google Sheet में दर्ज हो गया है।')
+          if (submitBtn) submitBtn.innerText = originalText
+          form.reset()
+        })
+        .catch(error => {
+          alert('त्रुटि! डेटा सबमिट नहीं हो सका, दोबारा प्रयास करें।')
+          if (submitBtn) submitBtn.innerText = originalText
+        })
+    })
+  }
+</script>
+        </div>
+      </div>
+    </div>
+
+    <!-- PUBLIC ANTI-FRAUD NOTICE -->
+    <div class="mt-16 max-w-7xl mx-auto">
+      <div class="p-6 rounded-3xl titanium-card border border-amber-500/20 flex flex-col sm:flex-row items-center gap-4 text-xs text-slate-300">
+        <div class="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 shrink-0">
+          <i data-lucide="shield-check" class="w-6 h-6"></i>
+        </div>
+        <div class="space-y-1">
+          <strong class="text-white text-sm block">100% Transparency & Public Protection Notice:</strong>
+          <p>
+            RAMMS GROUPS does not solicit upfront fees for job offers or affiliate registration. We operate zero private financial trading groups on Telegram or WhatsApp and provide no guaranteed return schemes. Our business operations are strictly confined to digital skills training and commercial IT agency solutions.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FLOATING RAMMS GROUPS AI ASSISTANT -->
+  <div class="fixed bottom-5 right-5 z-50">
+    <button onclick="toggleChatbot()" id="chatToggleBtn" class="flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-gradient-to-r from-amber-500 to-yellow-500 text-slate-950 font-bold shadow-xl hover:scale-105 transition">
+      <i data-lucide="bot" class="w-4 h-4 text-slate-950"></i>
+      <span class="text-xs font-black uppercase tracking-wider">RAMMS GROUPS AI</span>
+    </button>
+
+    <div id="chatModal" class="hidden absolute bottom-14 right-0 w-[92vw] sm:w-[420px] h-[540px] rounded-3xl titanium-card border border-slate-700 shadow-2xl flex flex-col overflow-hidden bg-[#07090E]">
+      <div class="p-3.5 bg-slate-900 border-b border-slate-800 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <div class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></div>
+          <div>
+            <h4 class="text-xs font-bold text-white uppercase tracking-wider">RAMMS GROUPS AI</h4>
+            <span class="text-[9px] text-amber-400 font-semibold block -mt-0.5">Instant Service & Pricing Intelligence</span>
+          </div>
+        </div>
+        <button onclick="toggleChatbot()" class="text-slate-400 hover:text-white"><i data-lucide="x" class="w-4 h-4"></i></button>
+      </div>
+
+      <div id="chatMessages" class="flex-grow p-3 space-y-3 overflow-y-auto text-xs">
+        <div class="bg-slate-800/90 text-slate-200 p-3 rounded-2xl rounded-tl-none border border-slate-700 leading-relaxed">
+          Welcome to <strong>RAMMS GROUPS AI</strong>! Ask me about any specific agency service, course fees, School ERP, or legal policies. Tap any tag below for instant rates!
+        </div>
+      </div>
+
+      <div class="p-2 bg-slate-900/80 border-t border-slate-800 flex gap-1.5 overflow-x-auto">
+        <button onclick="sendQuickPrompt('School ERP Details & Price')" class="whitespace-nowrap px-2.5 py-1 rounded-full bg-slate-800 hover:bg-slate-700 text-[10px] text-amber-300 font-semibold">🏫 School ERP</button>
+        <button onclick="sendQuickPrompt('Website Development Rate')" class="whitespace-nowrap px-2.5 py-1 rounded-full bg-slate-800 hover:bg-slate-700 text-[10px] text-yellow-300 font-semibold">💻 Web Dev</button>
+        <button onclick="sendQuickPrompt('Mobile App Dev Price')" class="whitespace-nowrap px-2.5 py-1 rounded-full bg-slate-800 hover:bg-slate-700 text-[10px] text-emerald-300 font-semibold">📱 App Dev</button>
+        <button onclick="sendQuickPrompt('Video Editing Charges')" class="whitespace-nowrap px-2.5 py-1 rounded-full bg-slate-800 hover:bg-slate-700 text-[10px] text-amber-400 font-semibold">🎬 Video Editing</button>
+        <button onclick="sendQuickPrompt('Logo Design Price')" class="whitespace-nowrap px-2.5 py-1 rounded-full bg-slate-800 hover:bg-slate-700 text-[10px] text-yellow-400 font-semibold">✒️ Logo</button>
+        <button onclick="sendQuickPrompt('Banner Design Rate')" class="whitespace-nowrap px-2.5 py-1 rounded-full bg-slate-800 hover:bg-slate-700 text-[10px] text-amber-300 font-semibold">🖼️ Banner</button>
+        <button onclick="sendQuickPrompt('Photo Editing Cost')" class="whitespace-nowrap px-2.5 py-1 rounded-full bg-slate-800 hover:bg-slate-700 text-[10px] text-yellow-300 font-semibold">📸 Photo</button>
+        <button onclick="sendQuickPrompt('Social Media Retainer')" class="whitespace-nowrap px-2.5 py-1 rounded-full bg-slate-800 hover:bg-slate-700 text-[10px] text-amber-400 font-semibold">📱 Social Media</button>
+        <button onclick="sendQuickPrompt('SEO Content Writing Rate')" class="whitespace-nowrap px-2.5 py-1 rounded-full bg-slate-800 hover:bg-slate-700 text-[10px] text-yellow-400 font-semibold">✍️ Content</button>
+        <button onclick="sendQuickPrompt('Presentation Deck Price')" class="whitespace-nowrap px-2.5 py-1 rounded-full bg-slate-800 hover:bg-slate-700 text-[10px] text-amber-300 font-semibold">📊 Pitch Decks</button>
+        <button onclick="sendQuickPrompt('14k Master Bundle Details')" class="whitespace-nowrap px-2.5 py-1 rounded-full bg-slate-800 hover:bg-slate-700 text-[10px] text-yellow-300 font-semibold">🔥 14k Bundle</button>
+        <button onclick="sendQuickPrompt('Refund Policy Terms')" class="whitespace-nowrap px-2.5 py-1 rounded-full bg-slate-800 hover:bg-slate-700 text-[10px] text-red-300 font-semibold">💵 Refunds</button>
+        <button onclick="sendQuickPrompt('Free Affiliate Program')" class="whitespace-nowrap px-2.5 py-1 rounded-full bg-slate-800 hover:bg-slate-700 text-[10px] text-emerald-400 font-semibold">🤝 Affiliate</button>
+      </div>
+
+      <form onsubmit="handleChatSubmit(event)" class="p-2.5 bg-slate-900 border-t border-slate-800 flex gap-1.5">
+        <input type="text" id="chatInput" placeholder="Ask any service price, course, or policy..." class="flex-grow bg-slate-800 text-xs px-3 py-1.5 rounded-xl text-white outline-none border border-slate-700 focus:border-amber-500">
+        <button type="submit" class="p-2 bg-amber-500 text-slate-950 font-bold rounded-xl hover:bg-amber-400 transition">
+          <i data-lucide="send" class="w-3.5 h-3.5"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="mt-20 border-t border-slate-800 bg-[#040508] py-12 relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div class="space-y-3 md:col-span-2">
+        <div class="flex items-center gap-2.5">
+          <img src="https://i.ibb.co/8nxXgV3r/file-00000000eaf88208b71aadae7827aebd.png" alt="Logo" class="h-9 w-auto">
+          <span class="text-lg font-black heading-font text-white">RAMMS GROUPS</span>
+        </div>
+        <p class="text-xs text-slate-400 max-w-sm leading-relaxed">
+          RELIABLE ASSET MANAGEMENT MULTIPLE-SERVICES. India's certified enterprise ecosystem bridging technical digital skills, custom software delivery, School Management ERPs, and free affiliate entrepreneurship.
+        </p>
+        <p class="text-[11px] text-slate-500">Partner Production: <strong>RADHIKA PRODUCTION HOUSE</strong></p>
+      </div>
+
+      <div>
+        <h5 class="text-xs font-bold uppercase tracking-wider text-slate-300 mb-3">Governance & Policies</h5>
+        <ul class="space-y-2 text-xs text-slate-400">
+          <li><button onclick="navigateToPage('msme')" class="hover:text-amber-400">MSME Udyam Registration</button></li>
+          <li><button onclick="navigateToPage('terms')" class="hover:text-amber-400">Terms of Service & Refunds</button></li>
+          <li><button onclick="navigateToPage('privacy')" class="hover:text-emerald-400">Privacy Policy (DPDP Act)</button></li>
+          <li><button onclick="navigateToPage('antifraud')" class="hover:text-red-400">Anti-Fraud & Legal Notice</button></li>
+          <li><button onclick="navigateToPage('cyber')" class="hover:text-amber-400">Cyber Security Pledge</button></li>
+          <li><button onclick="navigateToPage('integrity')" class="hover:text-emerald-400">Corporate Integrity Pledge</button></li>
+        </ul>
+      </div>
+
+      <div>
+        <h5 class="text-xs font-bold uppercase tracking-wider text-slate-300 mb-3">Verified Entity</h5>
+        <ul class="space-y-2 text-xs text-slate-400">
+          <li>MSME: UDYAM-UP-70-0040454</li>
+          <li>Email: rammsgroups0001@gmail.com</li>
+          <li>Desk: +91 7991245586</li>
+          <li>Headquarters: Siddharthnagar, UP, India</li>
         </ul>
       </div>
     </div>
-  </section>
-
-  <!-- Demo Section -->
-  <section id="demo" class="section">
-    <div class="glass-panel demo-wrapper">
-      <div class="badge-pill"><i class="fa-solid fa-video"></i> Experience the Teaching Methodology</div>
-      <h2>Watch Free Demo Lecture</h2>
-      <p style="max-width: 600px; color: var(--text-secondary); margin-top: 8px;">
-        See how complex Chemical Kinetics and Reaction Mechanisms are broken down into simple, intuitive concepts[span_15](start_span)[span_15](end_span).
-      </p>
-
-      <div class="demo-screen" onclick="playDemo()">
-        <div class="play-btn-circle">
-          <i class="fa-solid fa-play"></i>
-        </div>
-        <p style="margin-top: 15px; font-weight: 600; color: #fff;">Class 12: Chemical Kinetics in 45 Mins</p>
-        <span style="font-size: 0.8rem; color: var(--text-secondary);">Click to Play Video</span>
-      </div>
+    <div class="max-w-7xl mx-auto px-4 mt-8 pt-6 border-t border-slate-900 text-center text-xs text-slate-500">
+      © 2026 RAMMS GROUPS. All statutory and proprietary rights reserved.
     </div>
-  </section>
-
-  <!-- About Section -->
-  <section id="about" class="section">
-    <div class="glass-panel card" style="padding: 40px; text-align: center;">
-      <h2 style="margin-bottom: 15px;">About Chemistry Zone</h2>
-      <p style="max-width: 780px; margin: 0 auto; line-height: 1.8; color: var(--text-secondary);">
-        At <strong>Chemistry Zone</strong>, we believe Chemistry is not a subject of rote memorization, but of understanding atomic interactions, nature's design, and systematic reasoning. Founded with a mission to simplify science, our institute offers high-quality instruction for school students (Classes 7–12) as well as competitive aspirants (JEE, NEET, NDA, CUET)[span_16](start_span)[span_16](end_span). Whether you learn through our well-equipped smart classrooms or via live online sessions, we provide the tools, modules, and mentorship you need to succeed[span_17](start_span)[span_17](end_span).
-      </p>
-    </div>
-  </section>
-
-  <!-- Contact & WhatsApp Section -->
-  <section id="contact" class="section">
-    <div class="contact-container">
-      <!-- Quick Contact Info -->
-      <div class="glass-panel contact-details">
-        <div>
-          <h2>Get in Touch</h2>
-          <p style="color: var(--text-secondary); margin: 10px 0 25px;">Have questions regarding batches, modules, or fees? Reach out directly[span_18](start_span)[span_18](end_span).</p>
-          
-          <a href="https://wa.me/919999999999" target="_blank" class="contact-card-link">
-            <i class="fa-brands fa-whatsapp whatsapp-accent"></i>
-            <div>
-              <div style="font-size: 0.8rem; color: var(--text-secondary);">WhatsApp Support</div>
-              <div style="font-weight: 600;">+91 99999 99999</div>
-            </div>
-          </a>
-
-          <a href="mailto:info@chemistryzone.com" class="contact-card-link">
-            <i class="fa-solid fa-envelope" style="color: var(--accent-cyan);"></i>
-            <div>
-              <div style="font-size: 0.8rem; color: var(--text-secondary);">Email ID</div>
-              <div style="font-weight: 600;">info@chemistryzone.com</div>
-            </div>
-          </a>
-
-          <div class="contact-card-link">
-            <i class="fa-solid fa-location-dot" style="color: #ff2a85;"></i>
-            <div>
-              <div style="font-size: 0.8rem; color: var(--text-secondary);">Classroom Centre</div>
-              <div style="font-weight: 600;">Main Market Road, Near City Center</div>
-            </div>
-          </div>
-        </div>
-
-        <div style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 20px;">
-          <i class="fa-solid fa-shield-halved"></i> 100% Student satisfaction guaranteed.
-        </div>
-      </div>
-
-      <!-- Quick Registration / Enquiry Form -->
-      <div class="glass-panel form-box">
-        <h3 style="margin-bottom: 20px;">Book a Free Counseling Call</h3>
-        <form onsubmit="handleFormSubmit(event)">
-          <div class="form-group">
-            <label>Student's Full Name</label>
-            <input type="text" class="form-control" placeholder="Enter student name" required />
-          </div>
-
-          <div class="form-group">
-            <label>WhatsApp / Phone Number</label>
-            <input type="tel" class="form-control" placeholder="+91 XXXXX XXXXX" required />
-          </div>
-
-          <div class="form-group">
-            <label>Select Target Exam / Class</label>
-            <select class="form-control" required>
-              <option value="" disabled selected>Select option</option>
-              <option>Class 7th - 10th Foundation</option>
-              <option>Class 11th - 12th Board</option>
-              <option>JEE (Main + Advanced)</option>
-              <option>NEET-UG</option>
-              <option>NDA Exam</option>
-              <option>CUET</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label>Preferred Mode</label>
-            <select class="form-control">
-              <option>Offline Classroom</option>
-              <option>Online Live Interactive</option>
-              <option>Hybrid (Both)</option>
-            </select>
-          </div>
-
-          <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; margin-top: 10px;">
-            Submit Enquiry
-          </button>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- Floating WhatsApp Action -->
-  <a href="https://wa.me/919999999999?text=Hello%20Chemistry%20Zone!%20I%20want%20details%20about%20your%20coaching." class="float-wa" target="_blank" title="Chat on WhatsApp">
-    <i class="fa-brands fa-whatsapp"></i>
-  </a>
-
-  <!-- Footer -->
-  <footer>
-    <p>© 2026 Chemistry Zone. All Rights Reserved. Designed with iOS Glassmorphism.</p>
   </footer>
 
-  <!-- =========================================================
-       JAVASCRIPT FOR DYNAMIC INTERACTIVITY
-       ========================================================= -->
+  <!-- SCRIPT ENGINE -->
   <script>
-    // Tab switching for Paid vs Free Modules
-    function switchTab(type) {
-      const freeContent = document.getElementById('free-content');
-      const paidContent = document.getElementById('paid-content');
-      const buttons = document.querySelectorAll('.tab-btn');
+    lucide.createIcons();
 
-      if (type === 'free') {
-        freeContent.style.display = 'grid';
-        paidContent.style.display = 'none';
-        buttons[0].classList.add('active');
-        buttons[1].classList.remove('active');
+            // PRELOADER ENGINE (AUTO-RUN 3.5s)
+    (function initPreloader() {
+      const preloader = document.getElementById('rammsPreloader');
+      const bar = document.getElementById('preloaderBar');
+      const percent = document.getElementById('loadPercent');
+      if (!preloader) return;
+
+      let progress = 0;
+      const totalDuration = 3500;
+      const intervalTime = 35;
+      const step = 100 / (totalDuration / intervalTime);
+
+      const timer = setInterval(() => {
+        progress += step;
+        if (progress >= 100) {
+          progress = 100;
+          clearInterval(timer);
+          if (percent) percent.innerText = "100%";
+          if (bar) bar.style.width = "100%";
+          setTimeout(() => {
+            preloader.style.opacity = '0';
+            setTimeout(() => { preloader.style.display = 'none'; }, 600);
+          }, 150);
+        } else {
+          const val = Math.floor(progress);
+          if (percent) percent.innerText = val + "%";
+          if (bar) bar.style.width = val + "%";
+        }
+      }, intervalTime);
+    })();
+
+    // 1. CLOCK
+    function updateClock() {
+      const now = new Date();
+      document.getElementById('liveClockDisplay').innerText = now.toLocaleTimeString('en-IN', { hour12: true });
+      document.getElementById('liveDateDisplay').innerText = now.toLocaleDateString('en-IN', { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' });
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    // 2. ROUTER
+    const pageTitles = {
+      home: "Enterprise Overview",
+      courses: "Professional Specialization Catalog",
+      calculator: "Project & Freelance ROI Estimator",
+      services: "Commercial Agency Rates",
+      affiliate: "Zero-Cost Affiliate Network",
+      goa: "Goa Campaign",
+      leadership: "Executive Board",
+      msme: "MSME National Registration",
+      terms: "Terms of Service & Refund Governance",
+      privacy: "Privacy Policy (DPDP Act Compliance)",
+      antifraud: "Anti-Fraud & Criminal Legal Action",
+      cyber: "DSCI Cyber Security Pledge",
+      integrity: "Corporate Integrity Pledge",
+      contact: "Official Grievance Desk"
+    };
+
+    function navigateToPage(pageId) {
+      document.querySelectorAll('.dynamic-page').forEach(p => p.classList.add('hidden'));
+      const active = document.getElementById('page-' + pageId);
+      if (active) {
+        active.classList.remove('hidden');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+      document.getElementById('activePageBreadcrumb').innerText = pageTitles[pageId] || pageId;
+      document.querySelectorAll('.nav-tab').forEach(t => {
+        if (t.getAttribute('data-target') === pageId) {
+          t.className = "nav-tab px-3 py-1.5 rounded-xl bg-amber-500/20 text-amber-400 border border-amber-500/30 transition";
+        } else {
+          t.className = "nav-tab px-3 py-1.5 rounded-xl text-slate-300 hover:text-white transition";
+        }
+      });
+    }
+
+    function toggleMobileNav() {
+      document.getElementById('mobileNavMenu').classList.toggle('hidden');
+    }
+
+    function toggleAccordion(id) {
+      const el = document.getElementById(id);
+      el.classList.toggle('active');
+    }
+
+    // CANVAS GRAPHICS
+    const canvas = document.getElementById('canvasEngine');
+    const ctx = canvas.getContext('2d');
+    let width, height, pts = [];
+    function resize() { width = canvas.width = window.innerWidth; height = canvas.height = window.innerHeight; }
+    window.addEventListener('resize', resize);
+    resize();
+    class Pt {
+      constructor() { this.x = Math.random()*width; this.y = Math.random()*height; this.vx = (Math.random()-0.5)*0.35; this.vy = (Math.random()-0.5)*0.35; this.r = Math.random()*1.5+0.5; }
+      update() { this.x += this.vx; this.y += this.vy; if (this.x<0||this.x>width) this.vx*=-1; if (this.y<0||this.y>height) this.vy*=-1; }
+      draw() { ctx.beginPath(); ctx.arc(this.x, this.y, this.r, 0, Math.PI*2); ctx.fillStyle = 'rgba(245, 158, 11, 0.4)'; ctx.fill(); }
+    }
+    for(let i=0; i<36; i++) pts.push(new Pt());
+    function loop() {
+      ctx.clearRect(0,0,width,height);
+      for(let i=0; i<pts.length; i++) {
+        pts[i].update(); pts[i].draw();
+        for(let j=i+1; j<pts.length; j++) {
+          const dx = pts[i].x - pts[j].x, dy = pts[i].y - pts[j].y, dist = Math.sqrt(dx*dx+dy*dy);
+          if (dist < 110) { ctx.beginPath(); ctx.strokeStyle = `rgba(245,158,11,${0.14*(1-dist/110)})`; ctx.lineWidth = 0.6; ctx.moveTo(pts[i].x, pts[i].y); ctx.lineTo(pts[j].x, pts[j].y); ctx.stroke(); }
+        }
+      }
+      requestAnimationFrame(loop);
+    }
+    loop();
+
+    // LEADERSHIP CAROUSEL
+    let leaderSlideIdx = 0;
+    const leaderSlides = document.querySelectorAll('.leader-spotlight-slide');
+    const leaderDots = document.querySelectorAll('#leaderDotsContainer span');
+    let leaderTimer;
+
+    function showLeaderSlide(index) {
+      leaderSlides.forEach((slide, idx) => {
+        if (idx === index) {
+          slide.className = "leader-spotlight-slide absolute inset-0 flex flex-col items-center justify-center text-center transition-all duration-700 opacity-100 transform translate-x-0";
+        } else {
+          slide.className = "leader-spotlight-slide absolute inset-0 flex flex-col items-center justify-center text-center transition-all duration-700 opacity-0 transform translate-x-8 pointer-events-none";
+        }
+      });
+      leaderDots.forEach((dot, idx) => {
+        dot.className = idx === index ? 'w-2.5 h-2.5 rounded-full bg-amber-400 cursor-pointer' : 'w-2.5 h-2.5 rounded-full bg-slate-700 cursor-pointer';
+      });
+      leaderSlideIdx = index;
+    }
+
+    function nextLeaderSlide() {
+      const next = (leaderSlideIdx + 1) % leaderSlides.length;
+      showLeaderSlide(next);
+      resetLeaderTimer();
+    }
+    function prevLeaderSlide() {
+      const prev = (leaderSlideIdx - 1 + leaderSlides.length) % leaderSlides.length;
+      showLeaderSlide(prev);
+      resetLeaderTimer();
+    }
+    function setLeaderSlide(idx) {
+      showLeaderSlide(idx);
+      resetLeaderTimer();
+    }
+    function startLeaderTimer() {
+      leaderTimer = setInterval(nextLeaderSlide, 4500);
+    }
+    function resetLeaderTimer() {
+      clearInterval(leaderTimer);
+      startLeaderTimer();
+    }
+    startLeaderTimer();
+
+    // ROI CALCULATOR
+    const projInput = document.getElementById('projInput');
+    const rateInput = document.getElementById('rateInput');
+    const monthsInput = document.getElementById('monthsInput');
+    function calculateROI() {
+      const p = parseInt(projInput.value);
+      const r = parseInt(rateInput.value);
+      const m = parseInt(monthsInput.value);
+
+      document.getElementById('projVal').innerText = p + ' Projects';
+      document.getElementById('rateVal').innerText = '₹' + r.toLocaleString('en-IN');
+      document.getElementById('monthsVal').innerText = m + ' Months';
+
+      const monthlyRev = p * r;
+      const totalP = p * m;
+      const cumulativeRev = monthlyRev * m;
+
+      document.getElementById('monthlyRevenue').innerText = '₹' + monthlyRev.toLocaleString('en-IN');
+      document.getElementById('totalProjects').innerText = totalP + ' Projects';
+      document.getElementById('cumulativeRevenue').innerText = '₹' + cumulativeRev.toLocaleString('en-IN');
+    }
+    [projInput, rateInput, monthsInput].forEach(s => s.addEventListener('input', calculateROI));
+    calculateROI();
+
+    // GOOGLE SHEET DIRECT WEBHOOK
+    const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec";
+
+    function handleSecureLeadSubmit(e) {
+      e.preventDefault();
+      const btn = document.getElementById('submitLeadBtn');
+      const btnText = document.getElementById('btnSubmitText');
+      const statusMsg = document.getElementById('formStatusMsg');
+      
+      const payload = {
+        name: document.getElementById('contactName').value.trim(),
+        phone: document.getElementById('contactPhone').value.trim(),
+        email: document.getElementById('contactEmail').value.trim(),
+        service: document.getElementById('contactService').value,
+        message: document.getElementById('contactMessage').value.trim()
+      };
+
+      btnText.innerText = "Connecting to Database...";
+      btn.disabled = true;
+
+      if (!GOOGLE_SHEET_URL.includes("YOUR_SCRIPT_ID")) {
+        fetch(GOOGLE_SHEET_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        })
+        .then(() => {
+          btnText.innerText = "Submitted Successfully!";
+          statusMsg.classList.remove('hidden');
+          document.getElementById('leadContactForm').reset();
+          setTimeout(() => {
+            btnText.innerText = "Submit to Executive Desk";
+            btn.disabled = false;
+          }, 3500);
+        })
+        .catch(err => {
+          fallbackEmailDispatch(payload);
+        });
       } else {
-        freeContent.style.display = 'none';
-        paidContent.style.display = 'grid';
-        buttons[0].classList.remove('active');
-        buttons[1].classList.add('active');
+        fallbackEmailDispatch(payload);
       }
     }
 
-    // Interactive Demo Video click action
-    function playDemo() {
-      const screen = document.querySelector('.demo-screen');
-      screen.innerHTML = `
-        <iframe 
-          width="100%" 
-          height="100%" 
-          src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" 
-          title="Demo Lecture" 
-          frameborder="0" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-          allowfullscreen 
-          style="border-radius: 20px;">
-        </iframe>
-      `;
+    function fallbackEmailDispatch(payload) {
+      const target = "rammsgroups0001@gmail.com";
+      const subject = encodeURIComponent(`RAMMS Inquiry [${payload.service}] - ${payload.name}`);
+      const body = encodeURIComponent(
+        `RAMMS GROUPS FORMAL INQUIRY DISPATCH:\n\n` +
+        `• Full Name: ${payload.name}\n` +
+        `• Mobile: ${payload.phone}\n` +
+        `• Email: ${payload.email}\n` +
+        `• Selection: ${payload.service}\n` +
+        `• Message:\n${payload.message}\n\n` +
+        `Dispatched via Corporate Portal.`
+      );
+      alert("✅ Inquiry verified! Dispatching to executive desk.");
+      window.location.href = `mailto:${target}?subject=${subject}&body=${body}`;
+      document.getElementById('btnSubmitText').innerText = "Submit to Executive Desk";
+      document.getElementById('submitLeadBtn').disabled = false;
     }
 
-    // Form Submit feedback
-    function handleFormSubmit(e) {
+    function inquireDirectly(topic) {
+      const target = "rammsgroups0001@gmail.com";
+      const subject = encodeURIComponent("Inquiry: " + topic + " - RAMMS GROUPS");
+      const body = encodeURIComponent("Hello RAMMS GROUPS Desk,\n\nI wish to enroll or inquire regarding: " + topic + ".\n\nMy Details:\n• Name: \n• Phone: \n• Location: ");
+      window.location.href = `mailto:${target}?subject=${subject}&body=${body}`;
+    }
+
+    // RAMMS GROUPS AI POINT-TO-POINT INTELLIGENCE
+    function toggleChatbot() { document.getElementById('chatModal').classList.toggle('hidden'); }
+    function sendQuickPrompt(txt) { document.getElementById('chatInput').value = txt; handleChatSubmit(new Event('submit')); }
+    
+    function handleChatSubmit(e) {
       e.preventDefault();
-      alert("Thank you for reaching out to Chemistry Zone! Our team will contact you via WhatsApp / Call within 24 hours.");
-      e.target.reset();
+      const input = document.getElementById('chatInput');
+      const val = input.value.trim();
+      if (!val) return;
+      const chatBox = document.getElementById('chatMessages');
+      
+      const userDiv = document.createElement('div');
+      userDiv.className = "bg-amber-500 text-slate-950 font-bold p-2.5 rounded-2xl rounded-tr-none ml-auto max-w-[85%]";
+      userDiv.innerText = val;
+      chatBox.appendChild(userDiv);
+      input.value = "";
+      chatBox.scrollTop = chatBox.scrollHeight;
+
+      setTimeout(() => {
+        const q = val.toLowerCase();
+        let reply = "";
+
+                if (q.includes('school') || q.includes('erp') || q.includes('college') || q.includes('management system')) {
+          reply = `<strong>🏫 School & College Management System (ERP):</strong><br>
+          • <strong>Setup & Deployment:</strong> ₹45,000 – ₹1,20,000+<br>
+          • <strong>Monthly Maintenance:</strong> Billed monthly according to active student count / per child.<br>
+          • <strong>Scalability:</strong> Strictly 'As Per School Requirement'—pricing and modules expand, increase, or decrease based on exact institutional requirements.<br>
+          • <strong>Key Modules:</strong> Admissions, RFID Attendance, Fee Gateways, Examination Engines, Staff Payroll, Parent Alerts.<br>
+          • Submit the contact form below for a custom proposal and live demo.`;
+        }
+        else if (q.includes('video') && !q.includes('bundle')) {
+          reply = `<strong>🎬 Video Editing Service & Rates:</strong><br>
+          • <strong>Rate:</strong> ₹149 per content asset (Regular ₹199)<br>
+          • <strong>Deliverables:</strong> YouTube cuts, Instagram Reels/Shorts, corporate promo videos, ad creatives, subtitle integration, sound effects, and color grading.<br>
+          • <strong>Course Fee:</strong> Included in ₹6,000 Creative Media Suite or ₹14,000 Master Bundle.`;
+        }
+        else if (q.includes('logo')) {
+          reply = `<strong>✒️ Vector Logo Design Service:</strong><br>
+          • <strong>Rate:</strong> ₹99 one-time standard delivery<br>
+          • <strong>Deliverables:</strong> High-resolution vector files (.AI, .PNG, .SVG), brand color palette, transparent background, and typography identity guidelines.`;
+        }
+        else if (q.includes('banner') || q.includes('poster')) {
+          reply = `<strong>🖼️ Commercial Banner Design:</strong><br>
+          • <strong>Rate:</strong> ₹299 per banner creative<br>
+          • <strong>Deliverables:</strong> High-converting social media display ads, website hero banners, Google Ad displays, promotional event posters, and billboard formats.`;
+        }
+        else if (q.includes('app') || q.includes('application') || q.includes('android') || q.includes('ios')) {
+          reply = `<strong>📱 Mobile Application Development (IT Agency):</strong><br>
+          • <strong>Rate:</strong> ₹70,000 – ₹80,000+ (Based on architecture scope)<br>
+          • <strong>Tech Stack:</strong> Cross-platform Android & iOS applications, API integration, cloud database, secure authentication, and Google Play Store setup support.<br>
+          • <em>Note:</em> Delivered strictly as client-contracted IT service (NOT a training course).`;
+        }
+        else if (q.includes('web') || q.includes('website')) {
+          if (q.includes('course') || q.includes('learn') || q.includes('syllabus')) {
+            reply = `<strong>💻 Website Development Pro Course:</strong><br>
+            • <strong>Fee:</strong> ₹10,000 (Flat 50% off on ₹20,000)<br>
+            • <strong>Curriculum:</strong> HTML5, CSS3, Tailwind CSS, JavaScript logic, Domain/DNS mapping, Netlify cloud hosting, and Google Search Console SEO.<br>
+            • Includes MSME certificate & portfolio projects.`;
+          } else {
+            reply = `<strong>💻 Commercial Website Development (Agency):</strong><br>
+            • <strong>Contract Rate:</strong> ₹40,000 – ₹60,000<br>
+            • <strong>Deliverables:</strong> Custom responsive web architecture, corporate landing pages, e-commerce integration, lightning-fast CDN, SSL encryption, and domain maintenance.<br>
+            • <strong>Course Option:</strong> Learn to build websites yourself for just ₹10,000!`;
+          }
+        }
+        else if (q.includes('photo') || q.includes('image') || q.includes('retouch')) {
+          reply = `<strong>📸 Studio Photo Editing Service:</strong><br>
+          • <strong>Rate:</strong> ₹49 per photo asset<br>
+          • <strong>Deliverables:</strong> High-end skin retouching, background removal/replacement, product isolation for e-commerce, lighting adjustments, and color grading.`;
+        }
+        else if (q.includes('social') || q.includes('instagram') || q.includes('retainer')) {
+          reply = `<strong>📱 Social Media Management Retainer:</strong><br>
+          • <strong>Rate:</strong> ₹4,999 per month<br>
+          • <strong>Deliverables:</strong> Complete monthly social media creative package: 20-30 branded posts, Instagram carousels, story graphics, brand theme consistency, and engagement copy.`;
+        }
+        else if (q.includes('content') || q.includes('writing') || q.includes('seo') || q.includes('blog') || q.includes('article')) {
+          reply = `<strong>✍️ SEO Content Writing & Copywriting:</strong><br>
+          • <strong>Rate:</strong> ₹0.50 – ₹1.50 per word<br>
+          • <strong>Deliverables:</strong> 100% human-written, search-optimized blog articles, corporate website copy, sales landing page funnels, and ad pitch scripts.`;
+        }
+        else if (q.includes('presentation') || q.includes('deck') || q.includes('ppt') || q.includes('powerpoint')) {
+          reply = `<strong>📊 Executive Presentation & Pitch Decks:</strong><br>
+          • <strong>Rate:</strong> ₹20 – ₹99 per slide<br>
+          • <strong>Deliverables:</strong> High-impact investor pitch decks, corporate PowerPoint templates, sales review presentations, infographic slides, and visual storytelling.`;
+        }
+        else if (q.includes('bundle') || q.includes('14000') || q.includes('14k') || q.includes('all course')) {
+          reply = `<strong>🔥 All-In-One Digital Career Master Bundle:</strong><br>
+          • <strong>Fee:</strong> ₹14,000 (Saves ₹2,000 vs individual ₹16,000)<br>
+          • <strong>Includes Everything:</strong> Full-Stack Web Development + All 7 Creative Media specializations (Video, Logo, Banners, Social Media, SEO Writing, Photo, Presentations).<br>
+          • <strong>Perks:</strong> Live interactive mentors, recorded lifetime access, verified client portfolio, and official Govt. MSME Completion Certificate.`;
+        }
+        else if (q.includes('creative media') || q.includes('6000') || q.includes('6k')) {
+          reply = `<strong>🎨 Creative Media Master Course:</strong><br>
+          • <strong>Fee:</strong> ₹6,000 (Flat 50% discount on ₹12,000)<br>
+          • <strong>7 Included Skills:</strong> Video Editing, Logo Design, Commercial Banners, Social Media Grids, SEO Content, Photo Retouching, and Presentation Decks.`;
+        }
+        else if (q.includes('refund') || q.includes('policy') || q.includes('cancel') || q.includes('return')) {
+          reply = `<strong>💵 7-Day Conditional Refund Policy:</strong><br>
+          • 100% refund available within 7 calendar days of enrollment.<br>
+          • <strong>Conditions:</strong> Student must have consumed less than 20% of modules, participated in zero live mentor classes, and downloaded no proprietary assets/certificates.<br>
+          • Email <em>rammsgroups0001@gmail.com</em> with Order ID for 5-7 day processing.`;
+        }
+        else if (q.includes('affiliate') || q.includes('commission') || q.includes('goa')) {
+          reply = `<strong>🤝 Zero-Cost Affiliate Network & Goa Trip:</strong><br>
+          • <strong>Joining Fee:</strong> 100% Free! Zero registration or kit fees.<br>
+          • <strong>Earning:</strong> Transparent, verified commission on every course or IT agency client referral.<br>
+          • <strong>Goa Campaign:</strong> Achieve the audited sales volume of ₹2,50,000 to win an all-expenses-sponsored Goa Beach retreat!`;
+        }
+        else if (q.includes('cheat') || q.includes('fraud') || q.includes('legal') || q.includes('police') || q.includes('action')) {
+          reply = `<strong>⚖️ Zero-Tolerance Anti-Fraud & Penal Governance:</strong><br>
+          • Overcharging even ₹0.01 beyond displayed invoice price is strictly forbidden.<br>
+          • Taking company funds into personal UPI accounts is treated as criminal fraud.<br>
+          • Defaulting agents face direct FIR under BNS & IT Act, permanent blacklisting, and <strong>100% recovery of all damages and court/advocate legal costs</strong>.`;
+        }
+        else {
+          reply = `I am <strong>RAMMS GROUPS AI</strong>! Ask me point-to-point details about any of our offerings:<br>
+          • <strong>School ERP</strong> (Admissions & Fees)<br>
+          • <strong>Agency Services:</strong> Video (₹149), Logo (₹99), Banner (₹299), Web Dev, App Dev<br>
+          • <strong>Courses:</strong> 14k Master Bundle, 10k Web Dev, 6k Creative Media<br>
+          • <strong>Direct Contact:</strong> Desk Hotline <strong>+91 7991245586</strong> or <strong>rammsgroups0001@gmail.com</strong>.`;
+        }
+
+        const botDiv = document.createElement('div');
+        botDiv.className = "bg-slate-800 text-slate-200 p-3 rounded-2xl rounded-tl-none border border-slate-700 leading-relaxed";
+        botDiv.innerHTML = reply;
+        chatBox.appendChild(botDiv);
+        chatBox.scrollTop = chatBox.scrollHeight;
+      }, 300);
     }
   </script>
 </body>
