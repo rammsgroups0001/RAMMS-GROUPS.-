@@ -1631,13 +1631,17 @@
       draw() { ctx.beginPath(); ctx.arc(this.x, this.y, this.r, 0, Math.PI*2); ctx.fillStyle = 'rgba(245, 158, 11, 0.4)'; ctx.fill(); }
     }
     for(let i=0; i<36; i++) pts.push(new Pt());
-    function loop() {
-      ctx.clearRect(0,0,width,height);
-      for(let i=0; i<pts.length; i++) {
-        pts[i].update(); pts[i].draw();
-        for(let j=i+1; j<pts.length; j++) {
-          const dx = pts[i].x - pts[j].x, dy = pts[i].y - pts[j].y, dist = Math.sqrt(dx*dx+dy*dy);
-          if (dist < 110) { ctx.beginPath(); ctx.strokeStyle = `rgba(245,158,11,${0.14*(1-dist/110)})`; ctx.lineWidth = 0.6; ctx.moveTo(pts[i].x, pts[i].y); ctx.lineTo(pts[j].x, pts[j].y); ctx.stroke(); }
+            function loop() {
+      ctx.clearRect(0, 0, width, height);
+      for (let i = 0; i < pts.length; i++) {
+        pts[i].update();
+        pts[i].draw();
+        for (let j = i + 1; j < pts.length; j++) {
+          const dx = pts[i].x - pts[j].x, dy = pts[i].y - pts[j].y, dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 110) {
+            ctx.beginPath();
+            ctx.strokeStyle = `rgba(245,158,11,${0.14 * (1 - dist / 110)})`;
+          }
         }
       }
       requestAnimationFrame(loop);
@@ -1687,6 +1691,9 @@
     }
     showLeaderSlide(0);
 startLeaderTimer();
+window.nextLeaderSlide = nextLeaderSlide;
+window.prevLeaderSlide = prevLeaderSlide;
+window.setLeaderSlide = setLeaderSlide;
 
     // ROI CALCULATOR
     const projInput = document.getElementById('projInput');
