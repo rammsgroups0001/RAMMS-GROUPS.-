@@ -34,7 +34,6 @@
       pointer-events: none !important;
     }
 
-        /* 120 FPS Zero-Lag Engine */
     body {
       background-color: #F8FAFC !important;
       background-image: none !important;
@@ -59,12 +58,6 @@
         transition: transform 0.2s ease, border-color 0.2s ease !important;
       }
     }
-
-    /* Offscreen performance boost */
-    section {
-  content-visibility: auto;
-  contain-intrinsic-size: 600px;
-}
 
     .titanium-nav {
       background: rgba(255, 255, 255, 0.70) !important;
@@ -1686,13 +1679,14 @@
       resetLeaderTimer();
     }
     function startLeaderTimer() {
-      leaderTimer = setInterval(nextLeaderSlide, 4500);
+      leaderTimer = setInterval(nextLeaderSlide, 3000);
     }
     function resetLeaderTimer() {
       clearInterval(leaderTimer);
       startLeaderTimer();
     }
-    startLeaderTimer();
+    showLeaderSlide(0);
+startLeaderTimer();
 
     // ROI CALCULATOR
     const projInput = document.getElementById('projInput');
