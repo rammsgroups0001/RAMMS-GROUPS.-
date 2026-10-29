@@ -34,45 +34,36 @@
       pointer-events: none !important;
     }
 
+        /* 120 FPS Zero-Lag Engine */
     body {
       background-color: #F8FAFC !important;
-      background-image: 
-        radial-gradient(at 10% 15%, rgba(245, 158, 11, 0.12) 0px, transparent 45%),
-        radial-gradient(at 90% 20%, rgba(59, 130, 246, 0.10) 0px, transparent 50%),
-        radial-gradient(at 50% 60%, rgba(236, 72, 153, 0.06) 0px, transparent 50%),
-        radial-gradient(at 80% 85%, rgba(16, 185, 129, 0.08) 0px, transparent 50%),
-        radial-gradient(at 20% 90%, rgba(245, 158, 11, 0.10) 0px, transparent 45%) !important;
-      background-attachment: fixed !important;
+      background-image: none !important;
       color: #0F172A !important;
     }
 
     .titanium-card {
-      background: rgba(255, 255, 255, 0.60) !important;
-      backdrop-filter: blur(28px) saturate(210%) !important;
-      -webkit-backdrop-filter: blur(28px) saturate(210%) !important;
-      border: 1px solid rgba(255, 255, 255, 0.85) !important;
-      border-top: 1.5px solid rgba(255, 255, 255, 0.95) !important;
-      border-left: 1.5px solid rgba(255, 255, 255, 0.85) !important;
-      border-bottom: 1px solid rgba(203, 213, 225, 0.5) !important;
-      box-shadow: 
-        0 20px 40px -15px rgba(15, 23, 42, 0.07),
-        0 4px 12px -2px rgba(15, 23, 42, 0.03),
-        inset 0 1px 2px 0 rgba(255, 255, 255, 0.95),
-        inset 0 -1px 2px 0 rgba(148, 163, 184, 0.15) !important;
-      border-radius: 28px !important;
-      color: #0F172A !important;
-      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      background: #FFFFFF !important;
+      border: 1px solid #E2E8F0 !important;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04) !important;
+      border-radius: 20px !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      transform: translateZ(0) !important;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+      content-visibility: auto;
+      contain-intrinsic-size: 350px;
     }
 
     .titanium-card:hover {
-      background: rgba(255, 255, 255, 0.80) !important;
-      border-color: rgba(245, 158, 11, 0.5) !important;
-      border-top-color: rgba(255, 255, 255, 1) !important;
-      transform: translateY(-4px) scale(1.006) !important;
-      box-shadow: 
-        0 30px 60px -15px rgba(15, 23, 42, 0.12),
-        0 0 25px 0 rgba(245, 158, 11, 0.15),
-        inset 0 2px 3px 0 rgba(255, 255, 255, 1) !important;
+      border-color: #F59E0B !important;
+      box-shadow: 0 8px 24px rgba(245, 158, 11, 0.12) !important;
+      transform: none !important;
+    }
+
+    /* Offscreen performance boost */
+    section {
+      content-visibility: auto;
+      contain-intrinsic-size: 600px;
     }
 
     .titanium-nav {
