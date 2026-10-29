@@ -41,20 +41,21 @@
       color: #0F172A !important;
     }
 
-    .titanium-card {
-      background: #FFFFFF !important;
-      border: 1px solid rgba(226, 232, 240, 0.9) !important;
-      box-shadow: 0 4px 16px -2px rgba(15, 23, 42, 0.05) !important;
+        .titanium-card {
+      background: rgba(255, 255, 255, 0.72) !important;
+      backdrop-filter: blur(10px) !important;
+      -webkit-backdrop-filter: blur(10px) !important;
+      border: 1px solid rgba(255, 255, 255, 0.85) !important;
+      box-shadow: 0 8px 30px -5px rgba(15, 23, 42, 0.05) !important;
       border-radius: 20px !important;
       transform: translateZ(0);
-      content-visibility: auto;
-      contain-intrinsic-size: 350px;
     }
 
     @media (hover: hover) and (pointer: fine) {
       .titanium-card:hover {
+        background: rgba(255, 255, 255, 0.85) !important;
         border-color: #F59E0B !important;
-        box-shadow: 0 12px 28px -4px rgba(245, 158, 11, 0.15) !important;
+        box-shadow: 0 12px 30px -5px rgba(245, 158, 11, 0.18) !important;
         transform: translateY(-2px) !important;
         transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
       }
