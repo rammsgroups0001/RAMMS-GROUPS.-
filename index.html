@@ -34,31 +34,37 @@
       pointer-events: none !important;
     }
 
+        /* 120 FPS Zero-Lag Engine */
     body {
       background-color: #F8FAFC !important;
       background-image: none !important;
       color: #0F172A !important;
     }
-   
-      .titanium-card {
-      background: rgba(255, 255, 255, 0.82) !important;
-      backdrop-filter: blur(8px) !important;
-      -webkit-backdrop-filter: blur(8px) !important;
-      border: 1px solid rgba(255, 255, 255, 0.9) !important;
-      box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05) !important;
+
+    .titanium-card {
+      background: #FFFFFF !important;
+      border: 1px solid #E2E8F0 !important;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04) !important;
       border-radius: 20px !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      transform: translateZ(0) !important;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+      content-visibility: auto;
+      contain-intrinsic-size: 350px;
     }
 
-    @media (hover: hover) and (pointer: fine) {
-      .titanium-card:hover {
-        background: rgba(255, 255, 255, 0.92) !important;
-        border-color: #F59E0B !important;
-        box-shadow: 0 10px 25px -4px rgba(245, 158, 11, 0.15) !important;
-        transform: translateY(-2px) !important;
-        transition: transform 0.2s ease, border-color 0.2s ease !important;
-      }
+    .titanium-card:hover {
+      border-color: #F59E0B !important;
+      box-shadow: 0 8px 24px rgba(245, 158, 11, 0.12) !important;
+      transform: none !important;
     }
 
+    /* Offscreen performance boost */
+    section {
+      content-visibility: auto;
+      contain-intrinsic-size: 600px;
+    }
 
     .titanium-nav {
       background: rgba(255, 255, 255, 0.70) !important;
@@ -1632,94 +1638,61 @@
       draw() { ctx.beginPath(); ctx.arc(this.x, this.y, this.r, 0, Math.PI*2); ctx.fillStyle = 'rgba(245, 158, 11, 0.4)'; ctx.fill(); }
     }
     for(let i=0; i<36; i++) pts.push(new Pt());
-            function loop() {
-      ctx.clearRect(0, 0, width, height);
-      for (let i = 0; i < pts.length; i++) {
-        pts[i].update();
-        pts[i].draw();
-        for (let j = i + 1; j < pts.length; j++) {
-          const dx = pts[i].x - pts[j].x, dy = pts[i].y - pts[j].y, dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < 110) {
-            ctx.beginPath();
-            ctx.strokeStyle = `rgba(245,158,11,${0.14 * (1 - dist / 110)})`;
-          }
+    function loop() {
+      ctx.clearRect(0,0,width,height);
+      for(let i=0; i<pts.length; i++) {
+        pts[i].update(); pts[i].draw();
+        for(let j=i+1; j<pts.length; j++) {
+          const dx = pts[i].x - pts[j].x, dy = pts[i].y - pts[j].y, dist = Math.sqrt(dx*dx+dy*dy);
+          if (dist < 110) { ctx.beginPath(); ctx.strokeStyle = `rgba(245,158,11,${0.14*(1-dist/110)})`; ctx.lineWidth = 0.6; ctx.moveTo(pts[i].x, pts[i].y); ctx.lineTo(pts[j].x, pts[j].y); ctx.stroke(); }
         }
       }
       requestAnimationFrame(loop);
     }
     loop();
 
-    // LEADERSHIP CAROUSEL ENGINE
-let leaderSlideIdx = 0;
-const leaderSlides = document.querySelectorAll('.leader-spotlight-slide');
-const leaderDots = document.querySelectorAll('#leaderDotsContainer span, #leaderDotsContainer div, [id*="leaderDot"] span');
-let leaderTimer = null;
+    // LEADERSHIP CAROUSEL
+    let leaderSlideIdx = 0;
+    const leaderSlides = document.querySelectorAll('.leader-spotlight-slide');
+    const leaderDots = document.querySelectorAll('#leaderDotsContainer span');
+    let leaderTimer;
 
-function showLeaderSlide(index) {
-  if (!leaderSlides || leaderSlides.length === 0) return;
-  
-  leaderSlideIdx = (index + leaderSlides.length) % leaderSlides.length;
-
-  leaderSlides.forEach((slide, idx) => {
-    if (idx === leaderSlideIdx) {
-      slide.style.setProperty('display', 'flex', 'important');
-      slide.style.setProperty('opacity', '1', 'important');
-      slide.style.setProperty('pointer-events', 'auto', 'important');
-      slide.style.setProperty('z-index', '10', 'important');
-    } else {
-      slide.style.setProperty('display', 'none', 'important');
-      slide.style.setProperty('opacity', '0', 'important');
-      slide.style.setProperty('pointer-events', 'none', 'important');
-      slide.style.setProperty('z-index', '1', 'important');
+    function showLeaderSlide(index) {
+      leaderSlides.forEach((slide, idx) => {
+        if (idx === index) {
+          slide.className = "leader-spotlight-slide absolute inset-0 flex flex-col items-center justify-center text-center transition-all duration-700 opacity-100 transform translate-x-0";
+        } else {
+          slide.className = "leader-spotlight-slide absolute inset-0 flex flex-col items-center justify-center text-center transition-all duration-700 opacity-0 transform translate-x-8 pointer-events-none";
+        }
+      });
+      leaderDots.forEach((dot, idx) => {
+        dot.className = idx === index ? 'w-2.5 h-2.5 rounded-full bg-amber-400 cursor-pointer' : 'w-2.5 h-2.5 rounded-full bg-slate-700 cursor-pointer';
+      });
+      leaderSlideIdx = index;
     }
-  });
 
-  if (leaderDots && leaderDots.length > 0) {
-    leaderDots.forEach((dot, idx) => {
-      if (idx === leaderSlideIdx) {
-        dot.style.opacity = '1';
-        dot.style.transform = 'scale(1.25)';
-      } else {
-        dot.style.opacity = '0.4';
-        dot.style.transform = 'scale(1)';
-      }
-    });
-  }
-}
-
-function nextLeaderSlide() {
-  showLeaderSlide(leaderSlideIdx + 1);
-  resetLeaderTimer();
-}
-
-function prevLeaderSlide() {
-  showLeaderSlide(leaderSlideIdx - 1);
-  resetLeaderTimer();
-}
-
-function setLeaderSlide(idx) {
-  showLeaderSlide(idx);
-  resetLeaderTimer();
-}
-
-function startLeaderTimer() {
-  if (leaderTimer) clearInterval(leaderTimer);
-  leaderTimer = setInterval(nextLeaderSlide, 3000);
-}
-
-function resetLeaderTimer() {
-  if (leaderTimer) clearInterval(leaderTimer);
-  startLeaderTimer();
-}
-
-// Window Global Binding for HTML Buttons
-window.nextLeaderSlide = nextLeaderSlide;
-window.prevLeaderSlide = prevLeaderSlide;
-window.setLeaderSlide = setLeaderSlide;
-
-// Run Immediately
-showLeaderSlide(0);
-startLeaderTimer();
+    function nextLeaderSlide() {
+      const next = (leaderSlideIdx + 1) % leaderSlides.length;
+      showLeaderSlide(next);
+      resetLeaderTimer();
+    }
+    function prevLeaderSlide() {
+      const prev = (leaderSlideIdx - 1 + leaderSlides.length) % leaderSlides.length;
+      showLeaderSlide(prev);
+      resetLeaderTimer();
+    }
+    function setLeaderSlide(idx) {
+      showLeaderSlide(idx);
+      resetLeaderTimer();
+    }
+    function startLeaderTimer() {
+      leaderTimer = setInterval(nextLeaderSlide, 4500);
+    }
+    function resetLeaderTimer() {
+      clearInterval(leaderTimer);
+      startLeaderTimer();
+    }
+    startLeaderTimer();
 
     // ROI CALCULATOR
     const projInput = document.getElementById('projInput');
