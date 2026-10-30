@@ -34,36 +34,45 @@
       pointer-events: none !important;
     }
 
-        /* 120 FPS Zero-Lag Engine */
     body {
       background-color: #F8FAFC !important;
-      background-image: none !important;
+      background-image: 
+        radial-gradient(at 10% 15%, rgba(245, 158, 11, 0.12) 0px, transparent 45%),
+        radial-gradient(at 90% 20%, rgba(59, 130, 246, 0.10) 0px, transparent 50%),
+        radial-gradient(at 50% 60%, rgba(236, 72, 153, 0.06) 0px, transparent 50%),
+        radial-gradient(at 80% 85%, rgba(16, 185, 129, 0.08) 0px, transparent 50%),
+        radial-gradient(at 20% 90%, rgba(245, 158, 11, 0.10) 0px, transparent 45%) !important;
+      background-attachment: fixed !important;
       color: #0F172A !important;
     }
 
     .titanium-card {
-      background: #FFFFFF !important;
-      border: 1px solid #E2E8F0 !important;
-      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04) !important;
-      border-radius: 20px !important;
-      backdrop-filter: none !important;
-      -webkit-backdrop-filter: none !important;
-      transform: translateZ(0) !important;
-      transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
-      content-visibility: auto;
-      contain-intrinsic-size: 350px;
+      background: rgba(255, 255, 255, 0.60) !important;
+      backdrop-filter: blur(28px) saturate(210%) !important;
+      -webkit-backdrop-filter: blur(28px) saturate(210%) !important;
+      border: 1px solid rgba(255, 255, 255, 0.85) !important;
+      border-top: 1.5px solid rgba(255, 255, 255, 0.95) !important;
+      border-left: 1.5px solid rgba(255, 255, 255, 0.85) !important;
+      border-bottom: 1px solid rgba(203, 213, 225, 0.5) !important;
+      box-shadow: 
+        0 20px 40px -15px rgba(15, 23, 42, 0.07),
+        0 4px 12px -2px rgba(15, 23, 42, 0.03),
+        inset 0 1px 2px 0 rgba(255, 255, 255, 0.95),
+        inset 0 -1px 2px 0 rgba(148, 163, 184, 0.15) !important;
+      border-radius: 28px !important;
+      color: #0F172A !important;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
     }
 
     .titanium-card:hover {
-      border-color: #F59E0B !important;
-      box-shadow: 0 8px 24px rgba(245, 158, 11, 0.12) !important;
-      transform: none !important;
-    }
-
-    /* Offscreen performance boost */
-    section {
-      content-visibility: auto;
-      contain-intrinsic-size: 600px;
+      background: rgba(255, 255, 255, 0.80) !important;
+      border-color: rgba(245, 158, 11, 0.5) !important;
+      border-top-color: rgba(255, 255, 255, 1) !important;
+      transform: translateY(-4px) scale(1.006) !important;
+      box-shadow: 
+        0 30px 60px -15px rgba(15, 23, 42, 0.12),
+        0 0 25px 0 rgba(245, 158, 11, 0.15),
+        inset 0 2px 3px 0 rgba(255, 255, 255, 1) !important;
     }
 
     .titanium-nav {
@@ -214,13 +223,7 @@
   </div>
 
   <!-- BACKGROUND GRAPHICS ENGINE -->
-  <!-- DYNAMIC LIQUID GLASS BACKGROUND MESH -->
-  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-    <div class="absolute -top-40 -left-40 w-96 h-96 bg-amber-400/20 rounded-full blur-[100px] animate-pulse"></div>
-    <div class="absolute top-1/4 -right-40 w-[30rem] h-[30rem] bg-blue-500/15 rounded-full blur-[120px]"></div>
-    <div class="absolute top-2/3 left-1/3 w-96 h-96 bg-emerald-400/15 rounded-full blur-[110px]"></div>
-    <div class="absolute -bottom-40 right-10 w-96 h-96 bg-amber-500/15 rounded-full blur-[100px]"></div>
-  </div>
+  <canvas id="canvasEngine" class="fixed inset-0 pointer-events-none z-0 opacity-20"></canvas>
 
   <!-- TOP BAR 1: STATUS TICKER -->
   <div class="relative z-50 bg-[#040508] border-b border-slate-800/80 text-[11px] font-semibold tracking-wider py-1.5 px-4 sm:px-8 text-slate-300 flex flex-wrap items-center justify-between gap-2">
@@ -364,7 +367,7 @@
     <div id="page-home" class="dynamic-page space-y-16">
       
       <!-- HERO BANNER -->
-<section class="relative rounded-3xl p-8 sm:p-14 overflow-hidden border border-white/80 bg-white/60 backdrop-blur-2xl shadow-[0_20px_50px_rgba(15,23,42,0.06)]">
+      <section class="relative rounded-3xl p-8 sm:p-14 overflow-hidden border border-slate-200 bg-white shadow-xl">
         <div class="relative z-10 max-w-3xl space-y-6">
           <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-slate-700 text-amber-400 text-xs font-bold uppercase tracking-wider">
             <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
@@ -599,70 +602,87 @@
 
     </div>
 
-<!-- TRENDING: SMARTPHONE WEB & DIGITAL GROWTH PRO -->
-<div class="p-6 sm:p-8 rounded-3xl titanium-card border border-amber-500/40 flex flex-col justify-between hover:shadow-2xl transition duration-300">
-  <div class="space-y-4">
-    <div class="flex items-center justify-between">
-      <span class="text-[11px] font-extrabold uppercase tracking-wider text-amber-600 bg-amber-500/10 px-3.5 py-1.5 rounded-full border border-amber-500/20">
-        ⚡ 100% Mobile & Tablet Setup
-      </span>
-      <span class="text-xs font-bold text-emerald-600 flex items-center gap-1">
-        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span> Active Batch
-      </span>
-    </div>
-    
-    <h3 class="text-2xl font-bold text-slate-900 heading-font">Smartphone Web & Digital Growth Pro</h3>
-    <p class="text-slate-600 text-xs leading-relaxed">
-      Master website development, AI-driven media, and local business digital setup directly from your mobile device. Launch client projects and earn without buying an expensive PC.
-    </p>
+    <!-- START: SMARTPHONE WEB & DIGITAL GROWTH PRO -->
+<section class="py-12 px-4 relative z-20">
+  <div class="max-w-4xl mx-auto">
+    <div style="background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(245, 158, 11, 0.45); border-radius: 24px; box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5);" class="p-6 md:p-8">
+      
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        
+        <!-- Left: Course Details -->
+        <div class="flex-1 space-y-4 text-left w-full">
+          <div class="flex items-center gap-2">
+            <span class="bg-amber-500/20 text-amber-400 border border-amber-500/40 text-[11px] font-bold uppercase tracking-wider px-3 py-0.5 rounded-full">
+              New Launch
+            </span>
+            <span class="text-xs text-slate-400">Zero Investment • 100% Mobile</span>
+          </div>
+          
+          <h3 class="text-2xl font-black text-white tracking-tight">
+            Smartphone Web &amp; Digital Growth Pro
+          </h3>
+          
+          <p class="text-sm text-slate-300 leading-relaxed">
+            बिना लैपटॉप के केवल अपने स्मार्टफोन से सीखें कम्पलीट मोबाइल कोडिंग, लाइव वेब होस्टिंग और डिजिटल ग्रोथ।
+          </p>
+          
+          <!-- Key Practical Points -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1 text-xs text-slate-200">
+            <div class="flex items-center gap-2">
+              <span class="text-amber-400 font-bold">✓</span>
+              <span>मोबाइल कोडिंग &amp; लाइव वेब होस्टिंग</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-amber-400 font-bold">✓</span>
+              <span>ज़ीरो इन्वेस्टमेंट क्लाइंट एक्विजिशन</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-amber-400 font-bold">✓</span>
+              <span>लैपटॉप की कोई ज़रूरत नहीं (Only Smartphone)</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-amber-400 font-bold">✓</span>
+              <span>लाइव प्रोजेक्ट्स &amp; पर्सनल पोर्टफोलियो</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-amber-400 font-bold">✓</span>
+              <span>हाई-रेट एजेंसी स्किल्स &amp; क्लाइंट क्लोजिंग</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-amber-400 font-bold">✓</span>
+              <span>सर्टिफिकेट (काम और एक्सपीरियंस के आधार पर)</span>
+            </div>
+          </div>
+        </div>
 
-    <!-- Syllabus Details -->
-    <div class="p-4 rounded-2xl bg-white/70 border border-slate-200/80 space-y-2 text-xs text-slate-700">
-      <p class="flex items-start gap-2">
-        <span class="text-amber-500 font-bold">✦</span>
-        <span><strong>Phase 1:</strong> Mobile Coding (Acode Engine) & Live Web Hosting</span>
-      </p>
-      <p class="flex items-start gap-2">
-        <span class="text-amber-500 font-bold">✦</span>
-        <span><strong>Phase 2:</strong> AI Reels, Voiceover Automation & Viral Creative Assets</span>
-      </p>
-      <p class="flex items-start gap-2">
-        <span class="text-amber-500 font-bold">✦</span>
-        <span><strong>Phase 3:</strong> Google Business Maps Ranking & WhatsApp Growth Engine</span>
-      </p>
-      <p class="flex items-start gap-2">
-        <span class="text-amber-500 font-bold">✦</span>
-        <span><strong>Phase 4:</strong> Zero-Investment Client Acquisition & Contracts</span>
-      </p>
-    </div>
+        <!-- Right: Pricing & Payment -->
+        <div class="w-full md:w-64 flex flex-col items-center justify-center p-5 rounded-2xl bg-slate-950/70 border border-white/10 text-center shrink-0">
+          <span class="text-xs text-slate-400 uppercase tracking-widest font-semibold mb-1">One-Time Access</span>
+          
+          <div class="flex items-baseline justify-center gap-2 mb-1">
+            <span class="text-3xl font-black text-amber-400">₹499</span>
+            <span class="text-sm text-slate-500 line-through">₹1,999</span>
+          </div>
+          
+          <span class="text-[11px] text-emerald-400 font-semibold mb-4 bg-emerald-500/10 px-2.5 py-0.5 rounded border border-emerald-500/20">
+            75% Special Discount
+          </span>
 
-    <!-- Feature Tags -->
-    <div class="flex flex-wrap gap-2 pt-1 text-[11px] font-semibold text-slate-500">
-      <span class="px-2.5 py-1 bg-slate-100 rounded-lg">✓ Zero Laptop Needed</span>
-      <span class="px-2.5 py-1 bg-slate-100 rounded-lg">✓ Live Project Portfolios</span>
-      <span class="px-2.5 py-1 bg-slate-100 rounded-lg">✓ High-Yield Agency Skills</span>
-    </div>
-  </div>
+          <!-- Official Payment Link -->
+          <a href="https://rzp.io/rzp/digitalgrow" 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             class="w-full py-3 px-4 rounded-xl font-bold text-slate-950 bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 hover:brightness-110 active:scale-95 transition-all text-center block shadow-lg shadow-amber-500/20 text-sm">
+            Enroll Now (Instant)
+          </a>
+        </div>
 
-  <!-- Pricing & Action Button -->
-  <div class="pt-6 mt-6 border-t border-slate-200/90 flex items-center justify-between gap-4">
-    <div>
-      <span class="text-[10px] text-slate-400 uppercase tracking-wider block font-semibold">Limited Seat Pricing</span>
-      <div class="flex items-baseline gap-2">
-        <span class="text-3xl font-black text-slate-900 heading-font">₹1,499</span>
-        <span class="text-sm text-slate-400 line-through">₹3,999</span>
       </div>
-    </div>
 
-    <!-- 3D Ultra Liquid Amber Enroll Button with Live Razorpay Link -->
-    <a href="https://rzp.io/rzp/digitalgrow" target="_blank" 
-       style="background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%) !important; color: #000000 !important;" 
-       class="group relative inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-2xl font-black text-xs uppercase tracking-wider shadow-[0_10px_25px_-5px_rgba(245,158,11,0.5)] hover:shadow-[0_15px_30px_-5px_rgba(245,158,11,0.7)] hover:scale-105 active:scale-95 transition-all duration-300 border border-amber-300/60">
-      <span style="color: #000000 !important; font-weight: 900 !important;">ENROLL NOW</span>
-      <span class="group-hover:translate-x-1 transition-transform duration-200 font-black" style="color: #000000 !important;">→</span>
-    </a>
+    </div>
   </div>
-</div>
+</section>
+<!-- END: SMARTPHONE WEB & DIGITAL GROWTH PRO -->
 
     <!-- PAGE 3: FREELANCE & AGENCY ROI ESTIMATOR -->
     <div id="page-calculator" class="dynamic-page hidden space-y-12">
