@@ -301,6 +301,10 @@
             <button onclick="navigateToPage('antifraud')" class="w-full text-left px-3 py-2 text-xs rounded-xl hover:bg-amber-600/20 text-slate-200">🚨 Anti-Fraud & Legal Action</button>
             <button onclick="navigateToPage('cyber')" class="w-full text-left px-3 py-2 text-xs rounded-xl hover:bg-amber-600/20 text-slate-200">🔒 DSCI Cyber Security</button>
             <button onclick="navigateToPage('integrity')" class="w-full text-left px-3 py-2 text-xs rounded-xl hover:bg-amber-600/20 text-slate-200">🤝 Corporate Integrity</button>
+       <button onclick="navigateToPage('pledges')" class="w-full text-left px-3 py-2 text-xs rounded-xl hover:bg-amber-500/20 text-slate-200 hover:text-white flex items-center gap-2">
+  <span>🛡️</span>
+  <span>Cyber Safety Pledges</span>
+</button>
           </div>
         </div>
 
@@ -349,6 +353,10 @@
         <button onclick="navigateToPage('antifraud'); toggleMobileNav()" class="p-2 rounded-xl bg-slate-900 text-left">🚨 Anti-Fraud Notice</button>
         <button onclick="navigateToPage('cyber'); toggleMobileNav()" class="p-2 rounded-xl bg-slate-900 text-left">🔒 DSCI Cyber</button>
         <button onclick="navigateToPage('integrity'); toggleMobileNav()" class="p-2 rounded-xl bg-slate-900 text-left">🤝 Corporate Integrity</button>
+    <button onclick="navigateToPage('pledges'); toggleMobileMenu();" class="w-full text-left p-2 rounded-xl bg-slate-800/50 hover:bg-amber-500/20 text-xs text-slate-200 flex items-center gap-2">
+  <span>🛡️</span>
+  <span>Cyber Safety Pledges</span>
+</button>
       </div>
     </div>
   </header>
@@ -603,76 +611,115 @@
     </div>
 
 <!-- START: SMARTPHONE WEB & DIGITAL GROWTH PRO -->
-<section class="py-12 px-4 relative z-20">
-  <div class="max-w-4xl mx-auto">
-    <div style="background: #0f172a; border: 1.5px solid #f59e0b; border-radius: 24px; box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.7);" class="p-6 md:p-8">
+<section style="padding: 48px 16px; position: relative; z-index: 20;">
+  <!-- Blinking Animation Style -->
+  <style>
+    @keyframes livePulse {
+      0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+      70% { transform: scale(1.1); box-shadow: 0 0 0 8px rgba(34, 197, 94, 0); }
+      100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+    }
+    .live-dot {
+      width: 10px;
+      height: 10px;
+      background-color: #22c55e;
+      border-radius: 50%;
+      display: inline-block;
+      animation: livePulse 1.8s infinite;
+    }
+  </style>
+
+  <div style="max-width: 950px; margin: 0 auto;">
+    <div style="background-color: #0b1120; border: 2px solid #f59e0b; border-radius: 24px; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8); padding: 28px;">
       
-      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+      <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px;">
         
         <!-- Left: Course Details -->
-        <div class="flex-1 space-y-4 text-left w-full">
-          <div class="flex items-center gap-2">
-            <span class="bg-amber-500/20 text-amber-400 border border-amber-500/40 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full">
-              New Launch
+        <div style="flex: 1 1 500px; text-align: left;">
+          
+          <!-- Badges & Blinking Live Status -->
+          <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-bottom: 12px;">
+            <!-- Live Active Batch Badge -->
+            <div style="display: inline-flex; align-items: center; gap: 8px; background-color: rgba(34, 197, 94, 0.15); border: 1px solid rgba(34, 197, 94, 0.4); padding: 4px 12px; border-radius: 9999px;">
+              <span class="live-dot"></span>
+              <span style="color: #4ade80 !important; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px;">
+                ACTIVE LIVE BATCH
+              </span>
+            </div>
+
+            <span style="background-color: rgba(245, 158, 11, 0.2); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.5); font-size: 11px; font-weight: 800; text-transform: uppercase; padding: 4px 10px; border-radius: 9999px; letter-spacing: 0.5px;">
+              NEW LAUNCH
             </span>
-            <span class="text-xs text-slate-300 font-medium">100% Smartphone Workflow • No Laptop Needed</span>
+
+            <span style="color: #cbd5e1 !important; font-size: 12px; font-weight: 600;">
+              100% Smartphone • No Laptop Needed
+            </span>
           </div>
           
-          <h3 class="text-2xl md:text-3xl font-black text-white tracking-tight">
+          <h3 style="color: #ffffff !important; font-size: 26px; font-weight: 900; margin: 0 0 10px 0; line-height: 1.2;">
             Smartphone Web &amp; Digital Growth Pro
           </h3>
           
-          <p class="text-sm text-slate-200 leading-relaxed font-normal">
+          <p style="color: #e2e8f0 !important; font-size: 14px; line-height: 1.5; margin: 0 0 18px 0; font-weight: 400;">
             Master full mobile web coding, live domain hosting, high-ticket client acquisition, and complete digital growth right from your phone.
           </p>
           
-          <!-- Key Points Grid (Bright & Sharp) -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1 text-xs text-white font-medium">
-            <div class="flex items-center gap-2">
-              <span class="text-amber-400 font-bold text-sm">✓</span>
-              <span>Mobile Web Coding &amp; Live Hosting</span>
+          <!-- Key Points List (Direct Inline Colors) -->
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px;">
+            
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="color: #fbbf24; font-weight: 900; font-size: 15px;">✓</span>
+              <span style="color: #ffffff !important; font-size: 13px; font-weight: 600;">Mobile Web Coding &amp; Live Hosting</span>
             </div>
-            <div class="flex items-center gap-2">
-              <span class="text-amber-400 font-bold text-sm">✓</span>
-              <span>High-Ticket Client Acquisition Strategy</span>
+            
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="color: #fbbf24; font-weight: 900; font-size: 15px;">✓</span>
+              <span style="color: #ffffff !important; font-size: 13px; font-weight: 600;">High-Ticket Client Acquisition Strategy</span>
             </div>
-            <div class="flex items-center gap-2">
-              <span class="text-amber-400 font-bold text-sm">✓</span>
-              <span>No Laptop Needed (100% Smartphone)</span>
+            
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="color: #fbbf24; font-weight: 900; font-size: 15px;">✓</span>
+              <span style="color: #ffffff !important; font-size: 13px; font-weight: 600;">No Laptop Needed (100% Smartphone)</span>
             </div>
-            <div class="flex items-center gap-2">
-              <span class="text-amber-400 font-bold text-sm">✓</span>
-              <span>Live Project Portfolio Building</span>
+            
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="color: #fbbf24; font-weight: 900; font-size: 15px;">✓</span>
+              <span style="color: #ffffff !important; font-size: 13px; font-weight: 600;">Live Project Portfolio Building</span>
             </div>
-            <div class="flex items-center gap-2">
-              <span class="text-amber-400 font-bold text-sm">✓</span>
-              <span>High-Rate Agency Closing Skills</span>
+            
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="color: #fbbf24; font-weight: 900; font-size: 15px;">✓</span>
+              <span style="color: #ffffff !important; font-size: 13px; font-weight: 600;">High-Rate Agency Closing Skills</span>
             </div>
-            <div class="flex items-center gap-2">
-              <span class="text-amber-400 font-bold text-sm">✓</span>
-              <span>Verified Certificate (Performance Based)</span>
+            
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="color: #fbbf24; font-weight: 900; font-size: 15px;">✓</span>
+              <span style="color: #ffffff !important; font-size: 13px; font-weight: 600;">Verified Certificate (Performance Based)</span>
             </div>
+
           </div>
         </div>
 
-        <!-- Right: Pricing Card -->
-        <div class="w-full md:w-64 flex flex-col items-center justify-center p-6 rounded-2xl bg-slate-900 border border-amber-500/30 text-center shrink-0 shadow-lg">
-          <span class="text-xs text-slate-400 uppercase tracking-widest font-semibold mb-2">One-Time Access</span>
+        <!-- Right: Pricing Box -->
+        <div style="flex: 0 0 250px; background-color: #030712; border: 1.5px solid rgba(245, 158, 11, 0.4); border-radius: 18px; padding: 22px; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.6); margin: 0 auto; width: 100%; max-width: 260px;">
           
-          <div class="flex items-baseline justify-center gap-2 mb-1">
-            <span class="text-3xl font-black text-amber-400">₹1,499</span>
-            <span class="text-sm text-slate-500 line-through">₹4,999</span>
+          <span style="color: #94a3b8 !important; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; display: block; margin-bottom: 6px;">
+            ONE-TIME ACCESS
+          </span>
+          
+          <div style="display: flex; align-items: baseline; justify-content: center; gap: 8px; margin-bottom: 4px;">
+            <span style="color: #fbbf24 !important; font-size: 32px; font-weight: 900;">₹1,499</span>
+            <span style="color: #64748b !important; font-size: 14px; text-decoration: line-through;">₹4,999</span>
           </div>
           
-          <span class="text-[11px] text-emerald-400 font-bold mb-5 bg-emerald-500/10 px-2.5 py-1 rounded border border-emerald-500/30">
+          <span style="display: inline-block; background-color: rgba(16, 185, 129, 0.15); color: #34d399 !important; font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 6px; border: 1px solid rgba(16, 185, 129, 0.3); margin-bottom: 18px;">
             70% Direct Launch Offer
           </span>
 
-          <!-- Official Payment Gateway Button -->
           <a href="https://rzp.io/rzp/digitalgrow" 
              target="_blank" 
              rel="noopener noreferrer" 
-             class="w-full py-3.5 px-4 rounded-xl font-extrabold text-slate-950 bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 hover:brightness-110 active:scale-95 transition-all text-center block shadow-lg shadow-amber-500/30 text-sm">
+             style="display: block; width: 100%; padding: 13px 0; border-radius: 12px; font-weight: 900; font-size: 14px; color: #020617 !important; background: linear-gradient(90deg, #fbbf24, #f59e0b); text-decoration: none; box-shadow: 0 8px 20px rgba(245, 158, 11, 0.35);">
             Enroll Now (Instant)
           </a>
         </div>
@@ -1339,7 +1386,109 @@
       </div>
     </div>
 
-    <!-- PAGE 14: CONTACT US -->
+  <!-- START: PAGE 14 - CYBER SAFETY PLEDGES (GOVERNANCE & LEGAL) -->
+<div id="page-14" class="page-content hidden">
+  <div style="max-width: 1000px; margin: 0 auto; padding: 32px 16px;">
+    
+    <!-- Header -->
+    <div style="text-align: center; margin-bottom: 28px;">
+      <span style="background-color: rgba(59, 130, 246, 0.1); color: #2563eb; border: 1px solid rgba(59, 130, 246, 0.3); font-size: 11px; font-weight: 800; text-transform: uppercase; padding: 4px 12px; border-radius: 9999px; letter-spacing: 0.5px;">
+        MeitY • CERT-In • ISEA Compliance
+      </span>
+      <h2 style="color: #0f172a !important; font-size: 26px; font-weight: 900; margin: 10px 0 6px 0;">
+        National Cyber Safety &amp; Ethics Pledges
+      </h2>
+      <p style="color: #64748b !important; font-size: 13px; max-width: 600px; margin: 0 auto; line-height: 1.5;">
+        Official security hygiene pledges undertaken by RAMMS GROUPS under the National Cyber Security Awareness Month (NCSAM 2026) guidelines.
+      </p>
+    </div>
+
+    <!-- 4 Certificates Grid (Light Theme for Governance Page) -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px;">
+      
+      <!-- Certificate 1: Scam Awareness -->
+      <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 16px; padding: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="border-radius: 10px; overflow: hidden; background: #000; border: 1px solid #cbd5e1; margin-bottom: 10px;">
+          <img src="https://i.ibb.co/ccxT4mZY/Screenshot-20261028-223845-Files-by-Google.jpg" 
+               alt="Scam Awareness Pledge" 
+               loading="lazy" 
+               style="width: 100%; height: 160px; object-fit: contain; display: block;">
+        </div>
+        <div>
+          <span style="font-size: 10px; font-weight: 800; color: #2563eb; text-transform: uppercase;">Certificate No: ISEA/PDG/SAP/000168</span>
+          <h4 style="color: #0f172a !important; font-size: 13px; font-weight: 800; margin: 4px 0 4px 0; line-height: 1.3;">
+            Scam Awareness &amp; Digital Safety
+          </h4>
+          <p style="color: #64748b !important; font-size: 11px; margin: 0; line-height: 1.4;">
+            Adherence to fraud defense and digital threat hygiene protocols.
+          </p>
+        </div>
+      </div>
+
+      <!-- Certificate 2: Digital Device & Data Security -->
+      <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 16px; padding: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="border-radius: 10px; overflow: hidden; background: #000; border: 1px solid #cbd5e1; margin-bottom: 10px;">
+          <img src="https://i.ibb.co/Mx1hCt56/Screenshot-20261030-143220-Files-by-Google.jpg" 
+               alt="Device and Data Security Pledge" 
+               loading="lazy" 
+               style="width: 100%; height: 160px; object-fit: contain; display: block;">
+        </div>
+        <div>
+          <span style="font-size: 10px; font-weight: 800; color: #2563eb; text-transform: uppercase;">MeitY • CERT-In • ISEA</span>
+          <h4 style="color: #0f172a !important; font-size: 13px; font-weight: 800; margin: 4px 0 4px 0; line-height: 1.3;">
+            Digital Device &amp; Data Security
+          </h4>
+          <p style="color: #64748b !important; font-size: 11px; margin: 0; line-height: 1.4;">
+            Standards for device integrity and secure local storage compliance.
+          </p>
+        </div>
+      </div>
+
+      <!-- Certificate 3: Strong Password & Secure Access -->
+      <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 16px; padding: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="border-radius: 10px; overflow: hidden; background: #000; border: 1px solid #cbd5e1; margin-bottom: 10px;">
+          <img src="https://i.ibb.co/zWp5zbDf/Screenshot-20261028-222919-Files-by-Google.jpg" 
+               alt="Strong Password Pledge" 
+               loading="lazy" 
+               style="width: 100%; height: 160px; object-fit: contain; display: block;">
+        </div>
+        <div>
+          <span style="font-size: 10px; font-weight: 800; color: #2563eb; text-transform: uppercase;">MeitY • CERT-In • ISEA</span>
+          <h4 style="color: #0f172a !important; font-size: 13px; font-weight: 800; margin: 4px 0 4px 0; line-height: 1.3;">
+            Strong Password &amp; Secure Access
+          </h4>
+          <p style="color: #64748b !important; font-size: 11px; margin: 0; line-height: 1.4;">
+            Strict authentication policies and credential safety standards.
+          </p>
+        </div>
+      </div>
+
+      <!-- Certificate 4: Safe Digital Transactions -->
+      <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 16px; padding: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="border-radius: 10px; overflow: hidden; background: #000; border: 1px solid #cbd5e1; margin-bottom: 10px;">
+          <img src="https://i.ibb.co/27sNLcN5/Screenshot-20261028-220518-Files-by-Google.jpg" 
+               alt="Safe Digital Transactions Pledge" 
+               loading="lazy" 
+               style="width: 100%; height: 160px; object-fit: contain; display: block;">
+        </div>
+        <div>
+          <span style="font-size: 10px; font-weight: 800; color: #2563eb; text-transform: uppercase;">MeitY • CERT-In • ISEA</span>
+          <h4 style="color: #0f172a !important; font-size: 13px; font-weight: 800; margin: 4px 0 4px 0; line-height: 1.3;">
+            Safe Transactions &amp; Fraud Response
+          </h4>
+          <p style="color: #64748b !important; font-size: 11px; margin: 0; line-height: 1.4;">
+            Safe payment routing, verified gateways, and prompt incident response.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+<!-- END: PAGE 14 -->
+
+    <!-- PAGE 15: CONTACT US -->
     <div id="page-contact" class="dynamic-page hidden space-y-12">
       <div class="text-center max-w-3xl mx-auto space-y-3">
         <span class="text-xs font-bold text-amber-400 uppercase tracking-widest bg-amber-500/10 px-3.5 py-1.5 rounded-full border border-amber-500/20">Official Grievance Desk</span>
@@ -1539,6 +1688,7 @@
           <li><button onclick="navigateToPage('antifraud')" class="hover:text-red-400">Anti-Fraud & Legal Notice</button></li>
           <li><button onclick="navigateToPage('cyber')" class="hover:text-amber-400">Cyber Security Pledge</button></li>
           <li><button onclick="navigateToPage('integrity')" class="hover:text-emerald-400">Corporate Integrity Pledge</button></li>
+       <li><button onclick="navigateToPage('pledges')" class="hover:text-amber-400">Cyber Safety Pledges</button></li>
         </ul>
       </div>
 
@@ -1616,6 +1766,7 @@
       antifraud: "Anti-Fraud & Criminal Legal Action",
       cyber: "DSCI Cyber Security Pledge",
       integrity: "Corporate Integrity Pledge",
+      pledges: "Cyber Safety Pledges",
       contact: "Official Grievance Desk"
     };
 
